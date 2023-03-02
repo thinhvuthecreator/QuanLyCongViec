@@ -13,10 +13,37 @@
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}"
-
-    Title="Đăng nhập" Height="450" Width="600">
-    <Grid>
-        <materialDesign:Card Width="440" Height="240">
+     ResizeMode="NoResize"
+     WindowStyle="None"
+    Title="Đăng nhập" Height="380" Width="500">
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <materialDesign:ColorZone Mode="Inverted" Padding="16">
+                <DockPanel>
+                    <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
+                        <ListBox>
+                            <ListBoxItem>
+                                Hello World
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                Nice Popup
+                            </ListBoxItem>                          
+                        </ListBox>
+                    </materialDesign:PopupBox>
+                    <StackPanel Orientation="Horizontal">
+                        <ToggleButton Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
+                        <TextBlock Text="               ĐĂNG NHẬP" Margin="16 0 0 0" FontSize="25" FontFamily="Yu Gothic UI Semibold">
+                        </TextBlock>
+                    </StackPanel>
+                </DockPanel>
+            </materialDesign:ColorZone>
+            
+        </Grid>
+        <materialDesign:Card Grid.Row="1" Width="440" Height="240">
             <Grid>
                 <Grid.Resources>
                     <Style TargetType="Grid">
