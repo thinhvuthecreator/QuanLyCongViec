@@ -11,15 +11,16 @@
         <materialDesign:ColorZone Mode="Inverted">
             <DockPanel>
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                        <Button ToolTip="Hạ màn hình" ToolBar.OverflowMode="AsNeeded">
+   
+                    <Button ToolTip="Hạ màn hình" ToolBar.OverflowMode="AsNeeded" Margin="0,0,2,0">
                             <materialDesign:PackIcon Kind="WindowMinimize"/>
                         </Button>
                         <Separator/>
-                        <Button ToolTip="Toàn màn hình" ToolBar.OverflowMode="AsNeeded">
+                    <Button ToolTip="Toàn màn hình" ToolBar.OverflowMode="AsNeeded" Margin="0,0,2,0">
                             <materialDesign:PackIcon Kind="WindowMaximize"/>
                         </Button>
                         <Separator/>
-                        <Button ToolTip="Đóng" ToolBar.OverflowMode="AsNeeded">
+                    <Button ToolTip="Đóng" ToolBar.OverflowMode="AsNeeded" Margin="0,0,2,0">
                             <materialDesign:PackIcon Kind="CloseOutline" />
                         </Button>
                 </StackPanel>
