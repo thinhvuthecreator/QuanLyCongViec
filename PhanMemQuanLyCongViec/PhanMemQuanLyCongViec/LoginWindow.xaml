@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhanMemQuanLyCongViec"
+        xmlns:uc="clr-namespace:PhanMemQuanLyCongViec.UserControlTuanThinh"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -22,26 +23,8 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <materialDesign:ColorZone Mode="Inverted" Padding="16">
-                <DockPanel>
-                    <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
-                        <ListBox>
-                            <ListBoxItem>
-                                Hello World
-                            </ListBoxItem>
-                            <ListBoxItem>
-                                Nice Popup
-                            </ListBoxItem>                          
-                        </ListBox>
-                    </materialDesign:PopupBox>
-                    <StackPanel Orientation="Horizontal">
-                        <ToggleButton Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
-                        <TextBlock Text="               ĐĂNG NHẬP" Margin="16 0 0 0" FontSize="25" FontFamily="Yu Gothic UI Semibold">
-                        </TextBlock>
-                    </StackPanel>
-                </DockPanel>
-            </materialDesign:ColorZone>
-            
+            <uc:UserControlTT>
+            </uc:UserControlTT>
         </Grid>
         <materialDesign:Card Grid.Row="1" Width="440" Height="240">
             <Grid>

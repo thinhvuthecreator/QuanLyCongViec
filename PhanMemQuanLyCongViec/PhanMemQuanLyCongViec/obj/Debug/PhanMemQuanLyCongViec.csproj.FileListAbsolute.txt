@@ -56,3 +56,5 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongV
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\PhanMemQuanLyCongViec.csproj.CopyComplete
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\PhanMemQuanLyCongViec.exe
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\PhanMemQuanLyCongViec.pdb
+C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\UserControlTuanThinh\UserControlTT.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\UserControlTuanThinh\UserControlTT.baml
