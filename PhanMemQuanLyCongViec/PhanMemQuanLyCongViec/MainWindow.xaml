@@ -10,7 +10,18 @@
         WindowStyle="None"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <uc:UserControlTT>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <uc:UserControlTT Grid.Row="0">
         </uc:UserControlTT>
+
+        <Grid Grid.Row= "1">
+            
+            
+        </Grid>
+
     </Grid>
 </Window>

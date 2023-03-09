@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using PhanMemQuanLyCongViec.ViewModel;
 namespace PhanMemQuanLyCongViec.UserControlTuanThinh
 {
     /// <summary>
@@ -20,9 +20,11 @@ namespace PhanMemQuanLyCongViec.UserControlTuanThinh
     /// </summary>
     public partial class UserControlTT : UserControl
     {
+        public ControlBarViewModel ControlbarViewModel { get; set; }
         public UserControlTT()
         {
             InitializeComponent();
+            this.DataContext = ControlbarViewModel = new ControlBarViewModel();
         }
     }
 }
