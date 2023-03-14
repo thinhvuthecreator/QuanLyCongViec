@@ -19,6 +19,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
         public bool isActivated = false;
       public MainViewModel()
         {
+            
             LoginWindow loginWD = new LoginWindow();
             if (!isActivated)
             {

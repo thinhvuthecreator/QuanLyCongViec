@@ -6,21 +6,26 @@
              xmlns:local="clr-namespace:PhanMemQuanLyCongViec.UserControlTuanThinh"
              mc:Ignorable="d" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             d:DesignHeight="550" d:DesignWidth="800">
+             d:DesignHeight="550" d:DesignWidth="800"
+             Name="ucControlBar">
     <Grid>
         <materialDesign:ColorZone Mode="Inverted">
             <DockPanel>
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-   
-                    <Button ToolTip="Hạ màn hình" ToolBar.OverflowMode="AsNeeded" Margin="0,0,2,0">
+
+                    <Button  Command="{Binding MinimizeWindowCommand}" 
+                            CommandParameter="{Binding ElementName=ucControlBar }" ToolTip="Hạ màn hình" ToolBar.OverflowMode="AsNeeded" Margin="0,0,2,0">
                             <materialDesign:PackIcon Kind="WindowMinimize"/>
                         </Button>
                         <Separator/>
-                    <Button ToolTip="Toàn màn hình" ToolBar.OverflowMode="AsNeeded" Margin="0,0,2,0">
+                    <Button  Command="{Binding MaximizeWindowCommand}" 
+                            CommandParameter="{Binding ElementName=ucControlBar }" ToolTip="Toàn màn hình" ToolBar.OverflowMode="AsNeeded" Margin="0,0,2,0">
                             <materialDesign:PackIcon Kind="WindowMaximize"/>
                         </Button>
                         <Separator/>
-                    <Button ToolTip="Đóng" ToolBar.OverflowMode="AsNeeded" Margin="0,0,2,0">
+                    <Button x:Name="closeWindowButton" Command="{Binding CloseWindowCommand}" 
+                            CommandParameter="{Binding ElementName=ucControlBar }"
+                            ToolTip="Đóng" ToolBar.OverflowMode="AsNeeded" Margin="0,0,2,0">
                             <materialDesign:PackIcon Kind="CloseOutline" />
                         </Button>
                 </StackPanel>
