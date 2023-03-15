@@ -17,19 +17,20 @@ namespace PhanMemQuanLyCongViec.ViewModel
         public ICommand CloseWindowCommand { get; set; }
         public ICommand MaximizeWindowCommand { get; set; }
         public ICommand MinimizeWindowCommand { get; set; }
+        public ICommand MoveWindowCommand { get; set; }
         #endregion
 
         public ControlBarViewModel()
         {
-            CloseWindowCommand = new RelayCommand<object>((p) => { return p != null ? true : false; }, (p) => 
-            { Window window = ((Window)getParentWindow(p));
+            CloseWindowCommand = new RelayCommand<UserControl>((p) => { return p != null ? true : false; }, (p) => 
+            { var window = ((Window)getParentWindow(p));
                 if(window != null)
                 {
                     window.Close();
                 }
             });
-            MaximizeWindowCommand = new RelayCommand<object>((p) => { return p != null ? true : false; }, (p) => {
-                Window window = ((Window)getParentWindow(p));
+            MaximizeWindowCommand = new RelayCommand<UserControl>((p) => { return p != null ? true : false; }, (p) => {
+                var window = ((Window)getParentWindow(p));
                 if (window != null)
                 {
                     if (window.WindowState == WindowState.Maximized)
@@ -40,19 +41,27 @@ namespace PhanMemQuanLyCongViec.ViewModel
                     }
                 }
             });
-            MinimizeWindowCommand = new RelayCommand<object>((p) => { return p != null ? true : false; }, (p) => {
-                Window window = ((Window)getParentWindow(p));
+            MinimizeWindowCommand = new RelayCommand<UserControl>((p) => { return p != null ? true : false; }, (p) => {
+                var window = ((Window)getParentWindow(p));
                 if (window != null)
                 {
                     window.WindowState = WindowState.Minimized;
                 }
             });
+            MoveWindowCommand = new RelayCommand<UserControl>((p) => { return p != null ? true : false; }, (p) =>
+            {
+                var window = ((Window)getParentWindow(p));
+                if (window != null)
+                {
+                    window.DragMove();
+                }
+            });
         }
 
         #region methods
-        FrameworkElement getParentWindow(object p)
+        FrameworkElement getParentWindow(UserControl p)
         {
-            FrameworkElement parent = p as FrameworkElement;
+            FrameworkElement parent = p;
             while(parent.Parent != null)
             {
                 parent = parent.Parent as FrameworkElement;
