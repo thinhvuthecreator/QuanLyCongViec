@@ -7,12 +7,14 @@
         xmlns:local="clr-namespace:PhanMemQuanLyCongViec"
         xmlns:uc="clr-namespace:PhanMemQuanLyCongViec.UserControlTuanThinh"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:viewModel="clr-namespace:PhanMemQuanLyCongViec.ViewModel"
         DataContext="{StaticResource MainVM}"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStyle="None"
         Title="Quản lý công việc" Height="600" Width="800">
+
     <Grid Background="#FF07070C">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -32,10 +34,10 @@
 
             <StackPanel x:Name="toggleBtnStackPanel" Grid.Column="0" Background="#FF1A1E2C">
 
-                <RadioButton x:Name="imageTypeRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="LOẠI HÌNH ẢNH">
+                <RadioButton x:Name="imageTypeRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="LOẠI HÌNH ẢNH" Command="{Binding LoaiHinhVM}">
                 </RadioButton>
 
-                <RadioButton x:Name="imageNotDoneRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="CHƯA XONG">
+                <RadioButton x:Name="imageNotDoneRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="CHƯA XONG" Command="{Binding ChuaXongVM}">
                 </RadioButton>
 
                 <RadioButton x:Name="imageDoneRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="ĐÃ XONG">
@@ -47,10 +49,17 @@
 
             </StackPanel>
 
-
-
-
+            <ContentControl Grid.Column="1"
+                        Grid.Row="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+            
         </Grid>
+        
+
+
+
+
 
     </Grid>
 </Window>
