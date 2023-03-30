@@ -20,13 +20,13 @@ namespace PhanMemQuanLyCongViec.ViewModel
       public MainViewModel()
         {
             
-            LoginWindow loginWD = new LoginWindow();
-            if (!isActivated)
-            {
-                isActivated = true;
+            //LoginWindow loginWD = new LoginWindow();
+            //if (!isActivated)
+            //{
+            //    isActivated = true;
                
-                loginWD.ShowDialog();
-            }
+            //    loginWD.ShowDialog();
+            //}
         }
     }
 }
