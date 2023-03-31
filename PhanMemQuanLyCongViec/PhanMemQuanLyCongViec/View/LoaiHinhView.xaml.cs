@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PhanMemQuanLyCongViec.ViewModel;
 
 namespace PhanMemQuanLyCongViec.View
 {
@@ -19,9 +20,13 @@ namespace PhanMemQuanLyCongViec.View
     /// </summary>
     public partial class LoaiHinhView : UserControl
     {
+        LoaiHinhView_ViewModel loaiHinhVM;
         public LoaiHinhView()
         {
+            
             InitializeComponent();
+            this.DataContext = loaiHinhVM = new LoaiHinhView_ViewModel();
+
         }
     }
 }

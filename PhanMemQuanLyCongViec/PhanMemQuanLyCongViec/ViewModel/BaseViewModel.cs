@@ -20,7 +20,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-    class RelayCommand<T> : ICommand
+    public class RelayCommand<T> : ICommand
     {
         private readonly Predicate<T> _canExecute;
         private readonly Action<T> _execute;

@@ -4,11 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhanMemQuanLyCongViec.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Height="450" Width="800">
-    <Grid Background="Black">
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Text="Scene 1" Foreground="White" FontFamily="Arial Rounded MT Bold">
-        </TextBlock>
+        Style="{StaticResource UserControlStyle}">
+    
+    <Grid Background="Transparent">
+
+        <Grid.Resources>
+            <Style TargetType="Button" x:Key="addButtonStyle">
+                <Setter Property="Height" Value="150"/>
+                <Setter Property="Width" Value="180"/>
+                <Setter Property="Margin" Value="20"/>
+            </Style>
+           
+
+        </Grid.Resources>
+        <WrapPanel x:Name="LoaiHinhScene">
+            <Button x:Name="addTypeButton" Style="{StaticResource addButtonStyle}" Background="#FF3E4E5F" ToolTip="Thêm loại hình" Command="{Binding  themLoaiHinhCommand}" CommandParameter="{Binding ElementName=LoaiHinhScene}">
+                <materialDesign:PackIcon Kind="NotePlus" Width="90" Height="90"/>
+            </Button>
+        </WrapPanel>
+
+
+
+
 
     </Grid>
 </UserControl>
