@@ -28,7 +28,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
         {
             get { return currentView; }
             set { currentView = value;  
-                OnPropertyChanged();
+                OnPropertyChanged();        // có sự thay đổi sẽ thông báo lên view để update
             }
         }
 
