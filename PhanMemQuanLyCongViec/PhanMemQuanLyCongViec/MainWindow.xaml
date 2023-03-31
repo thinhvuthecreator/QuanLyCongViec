@@ -34,10 +34,10 @@
 
             <StackPanel x:Name="toggleBtnStackPanel" Grid.Column="0" Background="#FF1A1E2C">
 
-                <RadioButton x:Name="imageTypeRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="LOẠI HÌNH ẢNH" Command="{Binding LoaiHinhVM}">
+                <RadioButton x:Name="imageTypeRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="LOẠI HÌNH ẢNH" Command="{Binding LoaiHinhCommand}">
                 </RadioButton>
 
-                <RadioButton x:Name="imageNotDoneRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="CHƯA XONG" Command="{Binding ChuaXongVM}">
+                <RadioButton x:Name="imageNotDoneRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="CHƯA XONG" Command="{Binding ChuaXongCommand}">
                 </RadioButton>
 
                 <RadioButton x:Name="imageDoneRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="ĐÃ XONG">
@@ -49,7 +49,7 @@
 
             </StackPanel>
 
-            <ContentControl Grid.Column="1"
+            <ContentControl Grid.Column="1" x:Name="SceneContentControl"
                         Grid.Row="1"
                             Margin="10"
                             Content="{Binding CurrentView}"/>

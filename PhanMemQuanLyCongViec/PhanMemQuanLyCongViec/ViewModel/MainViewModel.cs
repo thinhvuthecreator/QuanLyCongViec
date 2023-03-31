@@ -17,8 +17,8 @@ namespace PhanMemQuanLyCongViec.ViewModel
     public class MainViewModel : BaseViewModel
     {
         #region commands
-        ICommand LoaiHinhCommand;
-        ICommand ChuaXongCommand;
+        public ICommand LoaiHinhCommand { get; set; }
+        public ICommand ChuaXongCommand { get; set; }
         #endregion
         public LoaiHinhViewModel LoaiHinhVM { get; set; }
         public ChuaXongViewModel ChuaXongVM { get; set; }
@@ -39,14 +39,16 @@ namespace PhanMemQuanLyCongViec.ViewModel
             ChuaXongVM = new ChuaXongViewModel();
             CurrentView = LoaiHinhVM;
 
-            LoaiHinhCommand = new RelayCommand<object>((o) => { return true; }, (o) =>
+            #region commands
+            LoaiHinhCommand = new RelayCommand<object>(o => { return true; },o =>
             {
                 CurrentView = LoaiHinhVM;
             });
-            ChuaXongCommand = new RelayCommand<object>((o) => { return true; }, (o) =>
+            ChuaXongCommand = new RelayCommand<object>(o => { return true; },o =>
             {
                 CurrentView = ChuaXongVM;
             });
+            #endregion
 
 
             //LoginWindow loginWD = new LoginWindow();
