@@ -17,7 +17,7 @@
                 <ResourceDictionary Source="/Theme/WorkingViewsInAppGeneral.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
-            <DataTemplate DataType="{x:Type viewModel:LoaiHinhViewModel}">
+            <DataTemplate DataType="{x:Type viewModel:LoaiHinhView_ViewModel}">
                 <view:LoaiHinhView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:ChuaXongViewModel}">

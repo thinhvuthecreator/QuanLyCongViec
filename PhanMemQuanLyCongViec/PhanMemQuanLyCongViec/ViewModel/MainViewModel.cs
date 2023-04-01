@@ -20,7 +20,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
         public ICommand LoaiHinhCommand { get; set; }
         public ICommand ChuaXongCommand { get; set; }
         #endregion
-        public LoaiHinhViewModel LoaiHinhVM { get; set; }
+        public LoaiHinhView_ViewModel LoaiHinhVM { get; set; }
         public ChuaXongViewModel ChuaXongVM { get; set; }
         private object currentView;
 
@@ -35,7 +35,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
         public MainViewModel()
         {
 
-            LoaiHinhVM = new LoaiHinhViewModel();
+            LoaiHinhVM = new LoaiHinhView_ViewModel();
             ChuaXongVM = new ChuaXongViewModel();
             CurrentView = LoaiHinhVM;
 

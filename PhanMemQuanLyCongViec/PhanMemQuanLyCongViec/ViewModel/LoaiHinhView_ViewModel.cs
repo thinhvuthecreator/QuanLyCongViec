@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using PhanMemQuanLyCongViec.View;
 
 namespace PhanMemQuanLyCongViec.ViewModel
 {
@@ -18,8 +19,17 @@ namespace PhanMemQuanLyCongViec.ViewModel
         {
             themLoaiHinhCommand = new RelayCommand<WrapPanel>((p) => { return true; }, (p) =>
             {
-                
-                (p as WrapPanel).Children.Add(themLoaiHinh("Hình thờ"));
+                ThemLoaiHinhView windowThem = new ThemLoaiHinhView();
+                windowThem.ShowDialog();
+                bool isClick = (windowThem.DataContext as ThemLoaiHinh_ViewModel).isClick;
+                if (isClick)
+                {
+                    (p as WrapPanel).Children.Add(themLoaiHinh((windowThem.DataContext as ThemLoaiHinh_ViewModel).tenLoaiHinh));
+                }
+                else
+                {
+
+                }
 
             });
         }
