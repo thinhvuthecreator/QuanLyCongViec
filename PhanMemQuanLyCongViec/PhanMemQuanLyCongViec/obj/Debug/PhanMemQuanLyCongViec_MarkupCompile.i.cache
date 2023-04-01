@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\App.xaml
-92031860167
+10-474320970
 
-17775818715
+18-2084568882
 1894108332
-LoginWindow.xaml;MainWindow.xaml;ResourcesXAML\MainResources.xaml;Theme\MenuButtonTheme.xaml;Theme\WorkingViewsInAppGeneral.xaml;UserControlTuanThinh\UserControlTT.xaml;View\ChuaXongView.xaml;View\LoaiHinhView.xaml;View\ThemLoaiHinhView.xaml;
+LoginWindow.xaml;MainWindow.xaml;ResourcesXAML\MainResources.xaml;Theme\MenuButtonTheme.xaml;Theme\WorkingViewsInAppGeneral.xaml;UserControlTuanThinh\UserControlTT.xaml;View\ChuaXongView.xaml;View\LoaiHinhView.xaml;View\QuanLyHinhView.xaml;View\ThemLoaiHinhView.xaml;
 
 True
 

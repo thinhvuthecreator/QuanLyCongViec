@@ -5,9 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhanMemQuanLyCongViec.View"
         mc:Ignorable="d"
-        Height="450" Width="800">
+        Style="{StaticResource UserControlStyle}">
     <Grid Background="Black">
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Text="Scene 2" Foreground="White" FontFamily="Arial Rounded MT Bold">
         </TextBlock>
+        <Border  Background="White" Grid.Column="1" Grid.Row="1" CornerRadius="15">
+            <ListView ItemsSource="{Binding Items1}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Tên" Width="84"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Ngày giao" Width="124"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Số điện thoại" Width="142"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Giá" Width="90"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Khách cọc" Width="124"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Còn lại" Width="105"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Ghi chú" Width="109"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Border>
     </Grid>
 </UserControl>

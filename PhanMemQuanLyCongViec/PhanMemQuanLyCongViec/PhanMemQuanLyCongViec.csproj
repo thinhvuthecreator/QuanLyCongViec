@@ -90,6 +90,9 @@
     <Compile Include="View\LoaiHinhView.xaml.cs">
       <DependentUpon>LoaiHinhView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\QuanLyHinhView.xaml.cs">
+      <DependentUpon>QuanLyHinhView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ThemLoaiHinhView.xaml.cs">
       <DependentUpon>ThemLoaiHinhView.xaml</DependentUpon>
     </Compile>
@@ -130,6 +133,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LoaiHinhView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QuanLyHinhView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

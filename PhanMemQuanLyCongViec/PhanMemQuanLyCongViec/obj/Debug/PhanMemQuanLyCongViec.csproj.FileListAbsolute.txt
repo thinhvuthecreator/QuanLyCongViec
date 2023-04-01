@@ -70,3 +70,5 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongV
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\Theme\WorkingViewsInAppGeneral.baml
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\View\ThemLoaiHinhView.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\View\ThemLoaiHinhView.baml
+C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\View\QuanLyHinhView.g.cs
+C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\View\QuanLyHinhView.baml

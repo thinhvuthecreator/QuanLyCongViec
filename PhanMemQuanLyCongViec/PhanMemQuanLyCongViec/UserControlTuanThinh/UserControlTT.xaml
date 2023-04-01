@@ -17,22 +17,22 @@
     </i:Interaction.Triggers>
 
     <Grid>
-        <materialDesign:ColorZone Mode="Inverted">
+        <materialDesign:ColorZone Mode="Inverted" Background="#FF2F4955">
             <DockPanel>
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
 
-                    <Button  Command="{Binding MinimizeWindowCommand}" 
+                    <Button  Command="{Binding MinimizeWindowCommand}" Background="#FF5BA8A8"
                             CommandParameter="{Binding ElementName=ucControlBar }" ToolTip="Hạ màn hình" ToolBar.OverflowMode="AsNeeded" Margin="0,0,2,0">
                             <materialDesign:PackIcon Kind="WindowMinimize"/>
                         </Button>
                     
                         <Separator/>
-                    <Button  Command="{Binding MaximizeWindowCommand}" 
+                    <Button  Command="{Binding MaximizeWindowCommand}" Background="#FF5BA8A8"
                             CommandParameter="{Binding ElementName=ucControlBar }" ToolTip="Toàn màn hình" ToolBar.OverflowMode="AsNeeded" Margin="0,0,2,0">
                             <materialDesign:PackIcon Kind="WindowMaximize"/>
                         </Button>
                         <Separator/>
-                    <Button x:Name="closeWindowButton" Command="{Binding CloseWindowCommand}" 
+                    <Button x:Name="closeWindowButton" Command="{Binding CloseWindowCommand}" Background="#FF5BA8A8"
                             CommandParameter="{Binding ElementName=ucControlBar }"
                             ToolTip="Đóng" ToolBar.OverflowMode="AsNeeded" Margin="0,0,2,0">
                             <materialDesign:PackIcon Kind="CloseOutline" />
