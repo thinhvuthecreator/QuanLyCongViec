@@ -33,7 +33,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
 
             });
         }
-
+         
         Button themLoaiHinh(string tenLoaiHinh)
         {
             Button loaiHinhBtn = new Button();
@@ -48,8 +48,28 @@ namespace PhanMemQuanLyCongViec.ViewModel
             var bc = new BrushConverter();
             loaiHinhBtn.Background = (Brush)bc.ConvertFrom("#FF3E4E5F");
             loaiHinhBtn.Content = tenLoaiHinh;
+            loaiHinhBtn.MouseEnter += LoaiHinhBtn_MouseEnter;
+            loaiHinhBtn.MouseLeave += LoaiHinhBtn_MouseLeave;
             return loaiHinhBtn;
 
         }
+
+        #region events
+        private void LoaiHinhBtn_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Button thisBtn = sender as Button;
+            var bc = new BrushConverter();
+            thisBtn.Background = (Brush)bc.ConvertFrom("#FF3E4E5F");
+            thisBtn.Foreground = (Brush)bc.ConvertFrom("White");
+        }
+        private void LoaiHinhBtn_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Button thisBtn = sender as Button;
+            var bc = new BrushConverter();
+            thisBtn.Background = (Brush)bc.ConvertFrom("#FFE3FFFE");
+            thisBtn.Foreground = (Brush)bc.ConvertFrom("#FF080808");
+        }
+        #endregion
+
     }
 }
