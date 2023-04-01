@@ -85,6 +85,7 @@
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
     <Compile Include="ViewModel\LoaiHinhView_ViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\QuanLyHinhViewModel.cs" />
     <Compile Include="ViewModel\ThemLoaiHinh_ViewModel.cs" />
     <Compile Include="View\ChuaXongView.xaml.cs">
       <DependentUpon>ChuaXongView.xaml</DependentUpon>

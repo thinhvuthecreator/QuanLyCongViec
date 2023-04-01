@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PhanMemQuanLyCongViec.ViewModel;
 
 namespace PhanMemQuanLyCongViec.View
 {
@@ -19,9 +20,11 @@ namespace PhanMemQuanLyCongViec.View
     /// </summary>
     public partial class QuanLyHinhView : Window
     {
+        QuanLyHinhViewModel quanLyHinhVM { get; set; }
         public QuanLyHinhView()
         {
             InitializeComponent();
+            this.DataContext = quanLyHinhVM = new QuanLyHinhViewModel();
         }
     }
 }

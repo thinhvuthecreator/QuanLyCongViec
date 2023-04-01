@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhanMemQuanLyCongViec.View"
         mc:Ignorable="d"
-        Title="ThemHinhView" Height="550" Width="700">
+        Title="ThemHinhView" Height="550" Width="700"
+        WindowStartupLocation="CenterScreen">
     <Grid Background="#FF17272B">
         
         <Grid.Resources>

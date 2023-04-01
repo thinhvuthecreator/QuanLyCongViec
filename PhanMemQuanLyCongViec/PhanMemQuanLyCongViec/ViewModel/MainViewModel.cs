@@ -50,10 +50,6 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 CurrentView = ChuaXongVM;
             });
             #endregion
-
-
-            ThemHinhView themHinhWindow = new ThemHinhView();
-            themHinhWindow.Show();
         
         }
     }
