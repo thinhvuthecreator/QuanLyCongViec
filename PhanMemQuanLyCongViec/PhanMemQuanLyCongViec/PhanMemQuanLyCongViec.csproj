@@ -75,6 +75,8 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\HinhAnh.cs" />
+    <Compile Include="Model\LoaiHinhAnh.cs" />
     <Compile Include="UserControlTuanThinh\UserControlTT.xaml.cs">
       <DependentUpon>UserControlTT.xaml</DependentUpon>
     </Compile>
@@ -92,6 +94,9 @@
     </Compile>
     <Compile Include="View\QuanLyHinhView.xaml.cs">
       <DependentUpon>QuanLyHinhView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThemHinhView.xaml.cs">
+      <DependentUpon>ThemHinhView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ThemLoaiHinhView.xaml.cs">
       <DependentUpon>ThemLoaiHinhView.xaml</DependentUpon>
@@ -140,6 +145,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ThemHinhView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ThemLoaiHinhView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -172,9 +181,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.7.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.7.1\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

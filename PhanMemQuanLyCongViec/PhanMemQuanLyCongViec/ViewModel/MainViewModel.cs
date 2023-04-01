@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PhanMemQuanLyCongViec.View;
 
 namespace PhanMemQuanLyCongViec.ViewModel
 {
@@ -51,13 +52,9 @@ namespace PhanMemQuanLyCongViec.ViewModel
             #endregion
 
 
-            //LoginWindow loginWD = new LoginWindow();
-            //if (!isActivated)
-            //{
-            //    isActivated = true;
-
-            //    loginWD.ShowDialog();
-            //}
+            ThemHinhView themHinhWindow = new ThemHinhView();
+            themHinhWindow.Show();
+        
         }
     }
 }
