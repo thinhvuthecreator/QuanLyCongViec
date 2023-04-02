@@ -13,9 +13,9 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStyle="None"
-        Title="Quản lý công việc" Height="600" Width="800">
+        Title="Quản lý công việc" Height="600" Width="820">
 
-    <Grid Background="#FF07070C">
+    <Grid Background="#FF2F3742">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -52,7 +52,7 @@
             <ContentControl Grid.Column="1" x:Name="SceneContentControl"
                         Grid.Row="1"
                             Margin="10"
-                            Content="{Binding CurrentView, UpdateSourceTrigger=PropertyChanged}"/>
+                            Content="{Binding CurrentView, UpdateSourceTrigger=PropertyChanged}" Background="Black"/>
             
         </Grid>
         

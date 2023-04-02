@@ -28,5 +28,7 @@ namespace PhanMemQuanLyCongViec.View
             this.DataContext = loaiHinhVM = new LoaiHinhView_ViewModel();
 
         }
+
+       
     }
 }

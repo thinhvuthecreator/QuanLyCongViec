@@ -5,9 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhanMemQuanLyCongViec.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:theme="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Style="{StaticResource UserControlStyle}">
+        Style="{StaticResource UserControlStyle}" >
     
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction  Command="{Binding viewLoadCommand}"  CommandParameter="{Binding ElementName=LoaiHinhScene}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
     <Grid Background="Transparent">
 
         <Grid.Resources>
@@ -19,11 +27,13 @@
            
 
         </Grid.Resources>
-        <WrapPanel x:Name="LoaiHinhScene">
-            <Button x:Name="addTypeButton" Style="{StaticResource addButtonStyle}" Background="#FF3E4E5F" ToolTip="Thêm loại hình" Command="{Binding  themLoaiHinhCommand}" CommandParameter="{Binding ElementName=LoaiHinhScene}">
-                <materialDesign:PackIcon Kind="NotePlus" Width="90" Height="90"/>
-            </Button>
-        </WrapPanel>
+        <ScrollViewer>
+            <WrapPanel x:Name="LoaiHinhScene" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <Button x:Name="addTypeButton" Style="{StaticResource addButtonStyle}" Background="#FF3E4E5F" ToolTip="Thêm loại hình" Command="{Binding  themLoaiHinhCommand}">
+                    <materialDesign:PackIcon Kind="NotePlus" Width="90" Height="90"/>
+                </Button>
+            </WrapPanel>
+        </ScrollViewer>
 
 
 

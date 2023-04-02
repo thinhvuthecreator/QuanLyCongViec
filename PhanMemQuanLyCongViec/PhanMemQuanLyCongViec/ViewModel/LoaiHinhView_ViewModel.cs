@@ -7,54 +7,80 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using PhanMemQuanLyCongViec.View;
+using PhanMemQuanLyCongViec.Model;
+using PhanMemQuanLyCongViec.ViewModel.SQL_ThaoTac;
+using System.Data;
 
 namespace PhanMemQuanLyCongViec.ViewModel
 {
     public class LoaiHinhView_ViewModel : BaseViewModel
     {
         #region commands
-        public RelayCommand<WrapPanel> themLoaiHinhCommand { get; set; }
+        public RelayCommand<object> themLoaiHinhCommand { get; set; }
+        public RelayCommand<WrapPanel> viewLoadCommand { get; set; }
         #endregion
         public LoaiHinhView_ViewModel()
         {
-            themLoaiHinhCommand = new RelayCommand<WrapPanel>((p) => { return true; }, (p) =>
+           
+            themLoaiHinhCommand = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
                 ThemLoaiHinhView windowThem = new ThemLoaiHinhView();
                 windowThem.ShowDialog();
-                bool isClick = (windowThem.DataContext as ThemLoaiHinh_ViewModel).isClick;
-                if (isClick)
-                {
-                    (p as WrapPanel).Children.Add(themLoaiHinh((windowThem.DataContext as ThemLoaiHinh_ViewModel).tenLoaiHinh));
-                }
-                else
-                {
-
-                }
-
             });
+            viewLoadCommand = new RelayCommand<WrapPanel>((p) => { return true; }, (p) =>   //p là WrapPanel
+            {
+                loadDuLieuCacLoaiHinh(p);
+                p.UpdateLayout();
+               
+            });
+
         }
-         
-        Button themLoaiHinh(string tenLoaiHinh)
+
+        #region methods
+        void loadDuLieuCacLoaiHinh(WrapPanel p)
         {
-            Button loaiHinhBtn = new Button();
-            loaiHinhBtn.Width = 180;
-            loaiHinhBtn.Height = 150;
-            Thickness margin = loaiHinhBtn.Margin;
-            margin.Left = 20;
-            margin.Right = 20;
-            margin.Top = 20;
-            margin.Bottom = 20;
-            loaiHinhBtn.Margin = margin;
-            var bc = new BrushConverter();
-            loaiHinhBtn.Background = (Brush)bc.ConvertFrom("#FF3E4E5F");
-            loaiHinhBtn.Content = tenLoaiHinh;
-            loaiHinhBtn.MouseEnter += LoaiHinhBtn_MouseEnter;
-            loaiHinhBtn.MouseLeave += LoaiHinhBtn_MouseLeave;
-            loaiHinhBtn.Click += LoaiHinhBtn_Click;
-            return loaiHinhBtn;
+            
+            DataTable dataLoaiHinh = LoaiHinhAnh_SQL.loadDulieu(); // trả về tất cả các loại hình
+            foreach(DataRow row in dataLoaiHinh.Rows)
+            {
+                if (row != null)
+                {
+                    Button loaiHinhBtn = new Button();
+                    loaiHinhBtn.Width = 180;
+                    loaiHinhBtn.Height = 150;
+                    Thickness margin = loaiHinhBtn.Margin;
+                    margin.Left = 20;
+                    margin.Right = 20;
+                    margin.Top = 20;
+                    margin.Bottom = 20;
+                    loaiHinhBtn.Margin = margin;
+                    var bc = new BrushConverter();
+                    loaiHinhBtn.Background = (Brush)bc.ConvertFrom("#FF3E4E5F");
+                    loaiHinhBtn.Content = row[1].ToString();    // tên loại hình
+                    loaiHinhBtn.MouseEnter += LoaiHinhBtn_MouseEnter;
+                    loaiHinhBtn.MouseLeave += LoaiHinhBtn_MouseLeave;
+                    loaiHinhBtn.Click += LoaiHinhBtn_Click;
+                    p.Children.Add(loaiHinhBtn);
+                }
+                else { }
+            }
+
+
+
+
+           
 
         }
-
+        FrameworkElement getParent(WrapPanel p)
+        {
+            FrameworkElement parent = p;
+            while(parent.Parent != null)
+            {
+                parent = parent.Parent as FrameworkElement;
+            }
+            return parent;
+        }
+        #endregion
 
         #region events
         private void LoaiHinhBtn_Click(object sender, RoutedEventArgs e)

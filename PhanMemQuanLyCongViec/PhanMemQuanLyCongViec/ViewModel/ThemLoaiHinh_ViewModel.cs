@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-
+using PhanMemQuanLyCongViec.ViewModel.SQL_ThaoTac;
+using PhanMemQuanLyCongViec.Model;
 namespace PhanMemQuanLyCongViec.ViewModel
 {
     public class ThemLoaiHinh_ViewModel : BaseViewModel
@@ -30,8 +31,14 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 else
                 {
                     isClick = true;
-                    tenLoaiHinh = o.Text;
-                    MessageBox.Show("Tạo thành công !");
+                    if (LoaiHinhAnh_SQL.themDuLieu( khoiTaoLoaiHinhAnh(o.Text)) )
+                    {
+                        MessageBox.Show("Tạo thành công !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm thất bại ! Tên loại hình bị Trùng lặp !");
+                    }
                     (getParentWindow(o) as Window).Close();
                     
                 }
@@ -50,6 +57,12 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 parent = parent.Parent as FrameworkElement;
             }
             return parent;
+        }
+        LoaiHinhAnh khoiTaoLoaiHinhAnh(string tenLoai)
+        {
+            LoaiHinhAnh loaiHinh = new LoaiHinhAnh();
+            loaiHinh.TenLoaiHinh = tenLoai;
+            return loaiHinh;
         }
 
     }
