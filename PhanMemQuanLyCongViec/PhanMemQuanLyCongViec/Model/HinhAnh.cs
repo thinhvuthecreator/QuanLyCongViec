@@ -17,6 +17,7 @@ namespace PhanMemQuanLyCongViec.Model
         private string ghiChu;
         private int maLoai;
         private string ngayGiaoHinh;
+        private int daXong;
 
         public string TenHinh { get => tenHinh; set => tenHinh = value; }
         public string KichCo { get => kichCo; set => kichCo = value; }
@@ -27,5 +28,6 @@ namespace PhanMemQuanLyCongViec.Model
         public int MaLoai { get => maLoai; set => maLoai = value; }
         public string NgayGiaoHinh { get => ngayGiaoHinh; set => ngayGiaoHinh = value; }
         public int MaHinh { get => maHinh; set => maHinh = value; }
+        public int DaXong { get => daXong; set => daXong = value; }
     }
 }

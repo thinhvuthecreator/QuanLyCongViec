@@ -86,6 +86,9 @@
     <Compile Include="ViewModel\LoaiHinhView_ViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\QuanLyHinhViewModel.cs" />
+    <Compile Include="ViewModel\SQL_ThaoTac\HinhAnh_SQL.cs" />
+    <Compile Include="ViewModel\SQL_ThaoTac\LoaiHinhAnh_SQL.cs" />
+    <Compile Include="ViewModel\SQL_ThaoTac\SQL_Connection.cs" />
     <Compile Include="ViewModel\ThemLoaiHinh_ViewModel.cs" />
     <Compile Include="View\ChuaXongView.xaml.cs">
       <DependentUpon>ChuaXongView.xaml</DependentUpon>
