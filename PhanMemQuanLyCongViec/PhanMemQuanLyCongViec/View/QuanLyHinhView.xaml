@@ -46,16 +46,16 @@
 
 
             <Border  Background="White" Grid.Column="1" Grid.Row="1" CornerRadius="15">
-                <ListView ItemsSource="{Binding Items1}">
+                <ListView ItemsSource="{Binding listHinhAnh}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Tên" Width="100"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Ngày giao" Width="125"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Số điện thoại" Width="142"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Giá" Width="100"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Khách cọc" Width="150"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Còn lại" Width="150"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Ghi chú" Width="109"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding TenHinh}" Header="Tên" Width="100"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding NgayGiaoHinh}" Header="Ngày giao" Width="125"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding SoDienThoaiKH}" Header="Số điện thoại" Width="142"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding GiaHinh}" Header="Giá" Width="100"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding GiaKhachCoc}" Header="Khách cọc" Width="150"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding ConLai}" Header="Còn lại" Width="150"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding GhiChu}" Header="Ghi chú" Width="109"/>
                         </GridView>
                     </ListView.View>
                 </ListView>

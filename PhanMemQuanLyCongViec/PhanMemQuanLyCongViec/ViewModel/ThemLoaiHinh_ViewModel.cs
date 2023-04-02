@@ -33,7 +33,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
                     isClick = true;
                     if (LoaiHinhAnh_SQL.themDuLieu( khoiTaoLoaiHinhAnh(o.Text)) )
                     {
-                        MessageBox.Show("Tạo thành công !");
+                        MessageBox.Show("Tạo thành công ! Vui lòng khởi động lại phần mềm để cập nhật.");
                     }
                     else
                     {

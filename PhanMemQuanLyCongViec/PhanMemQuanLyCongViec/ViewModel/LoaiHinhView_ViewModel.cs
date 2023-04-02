@@ -29,9 +29,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
             });
             viewLoadCommand = new RelayCommand<WrapPanel>((p) => { return true; }, (p) =>   //p là WrapPanel
             {
-                loadDuLieuCacLoaiHinh(p);
-                p.UpdateLayout();
-               
+                loadDuLieuCacLoaiHinh(p); 
             });
 
         }
@@ -61,6 +59,8 @@ namespace PhanMemQuanLyCongViec.ViewModel
                     loaiHinhBtn.MouseLeave += LoaiHinhBtn_MouseLeave;
                     loaiHinhBtn.Click += LoaiHinhBtn_Click;
                     p.Children.Add(loaiHinhBtn);
+
+
                 }
                 else { }
             }
@@ -70,15 +70,6 @@ namespace PhanMemQuanLyCongViec.ViewModel
 
            
 
-        }
-        FrameworkElement getParent(WrapPanel p)
-        {
-            FrameworkElement parent = p;
-            while(parent.Parent != null)
-            {
-                parent = parent.Parent as FrameworkElement;
-            }
-            return parent;
         }
         #endregion
 

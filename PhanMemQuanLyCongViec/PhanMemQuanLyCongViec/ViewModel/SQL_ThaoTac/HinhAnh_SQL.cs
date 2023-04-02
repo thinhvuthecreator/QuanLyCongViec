@@ -23,7 +23,7 @@ namespace PhanMemQuanLyCongViec.ViewModel.SQL_ThaoTac
             bool isSuccess = true;
             try
             {
-                string addQuerry = "INSERT HINHANH VALUES(N'" + hinh.TenHinh + "',N'" + hinh.NgayGiaoHinh + "',N'"+ hinh.SoDienThoaiKH + "'," + hinh.GiaHinh +"," + hinh.GiaKhachCoc +",N'" + hinh.GhiChu +"'," + hinh.DaXong +"," + hinh.MaLoai + ")";
+                string addQuerry = "INSERT HINHANH VALUES(N'" + hinh.TenHinh + "',N'" + hinh.NgayGiaoHinh + "',N'"+ hinh.SoDienThoaiKH + "'," + hinh.GiaHinh +"," + hinh.GiaKhachCoc +",N'" + hinh.GhiChu +"'," + hinh.DaXong +"," + hinh.MaLoai +",N'" + hinh.KichCo + "')";
                 SQL_Connection.Instance.ExecuteNONquerrySQL(addQuerry);
             }
             catch
