@@ -73,16 +73,6 @@ namespace PhanMemQuanLyCongViec.ViewModel
             hAnh.MaLoai = LoaiHinhDaChon.MaLoai;
 
         }
-        FrameworkElement getParent(Button btn)
-        {
-            FrameworkElement parent = btn;
-            while(parent.Parent != null)
-            {
-                parent = parent.Parent as FrameworkElement;
-            }
-            return parent;
-
-        }
         #endregion
 
     }
