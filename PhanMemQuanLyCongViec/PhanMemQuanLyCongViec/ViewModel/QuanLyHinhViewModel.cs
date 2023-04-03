@@ -30,7 +30,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
         void loadDuLieuHinhAnh()
         {
             listHinhAnh = new List<HinhAnh>();
-            DataTable dataHinhAnh =  HinhAnh_SQL.loadDulieu();
+            DataTable dataHinhAnh = SQL_Connection.Instance.ExecuteSQL("SELECT * FROM HINHANH WHERE MALOAI = " + LoaiHinhDaChon.MaLoai);
             foreach(DataRow row in dataHinhAnh.Rows)
             {
                 HinhAnh hinh = new HinhAnh();

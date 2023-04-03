@@ -76,6 +76,9 @@ namespace PhanMemQuanLyCongViec.ViewModel
         #region events
         private void LoaiHinhBtn_Click(object sender, RoutedEventArgs e)
         {
+            Button thisBtn = sender as Button;
+            DataTable data = SQL_Connection.Instance.ExecuteSQL("SELECT MALOAI FROM LOAIHINHANH WHERE TENLOAI = N'" + thisBtn.Content + "'");
+            LoaiHinhDaChon.MaLoai = int.Parse(data.Rows[0][0].ToString());
             QuanLyHinhView quanLyHinhWindow = new QuanLyHinhView();
             quanLyHinhWindow.ShowDialog();
         }

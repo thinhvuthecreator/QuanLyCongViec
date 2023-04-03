@@ -18,16 +18,16 @@ namespace PhanMemQuanLyCongViec.ViewModel
         #endregion
 
         #region properties
-        public string TenHinh { get; set; } = "A";
-        public string KichCo { get; set; } = "B";
-        public decimal GiaHinh { get; set; } = 90;
-        public decimal GiaKhachCoc { get; set; } = 4;
-        public string SoDienThoaiKH { get; set; } = "a";
-        public string GhiChu { get; set; } = "4";
+        public string TenHinh { get; set; }
+        public string KichCo { get; set; } 
+        public decimal GiaHinh { get; set; } 
+        public decimal GiaKhachCoc { get; set; } 
+        public string SoDienThoaiKH { get; set; } 
+        public string GhiChu { get; set; } 
         public int MaLoai { get; set; }
-        public string NgayGiaoHinh { get; set; } = "4";
+        public string NgayGiaoHinh { get; set; } 
         public int MaHinh { get; set; }
-        public int DaXong { get; set; }
+        public int DaXong { get; set; } = 0;
 
         #endregion
 
@@ -70,6 +70,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
             hAnh.MaLoai = MaLoai;
             hAnh.NgayGiaoHinh = NgayGiaoHinh;
             hAnh.DaXong = DaXong;
+            hAnh.MaLoai = LoaiHinhDaChon.MaLoai;
 
         }
         FrameworkElement getParent(Button btn)
