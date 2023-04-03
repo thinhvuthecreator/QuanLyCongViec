@@ -36,6 +36,8 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 if (HinhAnh_SQL.suaDuLieu(hinh))
                 {
                     MessageBox.Show("Đã cập nhật !");
+                    MessageBox.Show(hinh.TenHinh);
+                    MessageBox.Show(hinh.MaHinh.ToString());
                 }
                 else
                 {
@@ -51,6 +53,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
             foreach(DataRow row in dataHinhAnh.Rows)
             {
                 HinhAnh hinh = new HinhAnh();
+                hinh.MaHinh = int.Parse(row[0].ToString());
                 hinh.TenHinh = row[1].ToString();
                 hinh.NgayGiaoHinh = row[2].ToString();
                 hinh.SoDienThoaiKH = row[3].ToString();
