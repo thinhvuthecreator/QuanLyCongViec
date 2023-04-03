@@ -76,6 +76,7 @@
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\HinhAnh.cs" />
+    <Compile Include="Model\HinhAnhBiXoa.cs" />
     <Compile Include="Model\LoaiHinhAnh.cs" />
     <Compile Include="UserControlTuanThinh\UserControlTT.xaml.cs">
       <DependentUpon>UserControlTT.xaml</DependentUpon>
@@ -88,11 +89,13 @@
     <Compile Include="ViewModel\LoaiHinhView_ViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\QuanLyHinhViewModel.cs" />
+    <Compile Include="ViewModel\SQL_ThaoTac\HinhAnhBiXoa_SQL.cs" />
     <Compile Include="ViewModel\SQL_ThaoTac\HinhAnh_SQL.cs" />
     <Compile Include="ViewModel\SQL_ThaoTac\LoaiHinhAnh_SQL.cs" />
     <Compile Include="ViewModel\SQL_ThaoTac\SQL_Connection.cs" />
     <Compile Include="ViewModel\ThemHinhViewModel.cs" />
     <Compile Include="ViewModel\ThemLoaiHinh_ViewModel.cs" />
+    <Compile Include="ViewModel\ThungRacViewModel.cs" />
     <Compile Include="View\ChuaXongView.xaml.cs">
       <DependentUpon>ChuaXongView.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,9 @@
     </Compile>
     <Compile Include="View\ThemLoaiHinhView.xaml.cs">
       <DependentUpon>ThemLoaiHinhView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThungRacView.xaml.cs">
+      <DependentUpon>ThungRacView.xaml</DependentUpon>
     </Compile>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
@@ -164,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ThemLoaiHinhView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThungRacView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

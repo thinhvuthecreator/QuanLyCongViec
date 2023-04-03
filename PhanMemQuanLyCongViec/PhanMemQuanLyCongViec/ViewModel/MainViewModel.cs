@@ -21,10 +21,12 @@ namespace PhanMemQuanLyCongViec.ViewModel
         public ICommand LoaiHinhCommand { get; set; }
         public ICommand ChuaXongCommand { get; set; }
         public ICommand DaXongCommand { get; set; }
+        public ICommand ThungRacCommand { get; set; }
         #endregion
         public LoaiHinhView_ViewModel LoaiHinhVM { get; set; }
         public ChuaXongViewModel ChuaXongVM { get; set; }
         public DaXongViewModel DaXongVM { get; set; }
+        public ThungRacViewModel ThungRacVM { get; set; }
         private object currentView;
 
         public object CurrentView
@@ -41,6 +43,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
             LoaiHinhVM = new LoaiHinhView_ViewModel();
             ChuaXongVM = new ChuaXongViewModel();
             DaXongVM = new DaXongViewModel();
+            ThungRacVM = new ThungRacViewModel();
             CurrentView = LoaiHinhVM;
 
             #region commands
@@ -54,8 +57,10 @@ namespace PhanMemQuanLyCongViec.ViewModel
             });
             DaXongCommand = new RelayCommand<object>(o => { return true; }, o => 
             { CurrentView = DaXongVM; });
+            ThungRacCommand = new RelayCommand<object>(o => { return true; }, o =>
+            { CurrentView = ThungRacVM; });
             #endregion
-        
+
         }
     }
 }

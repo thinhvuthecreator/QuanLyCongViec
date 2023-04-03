@@ -26,6 +26,9 @@
             <DataTemplate DataType="{x:Type viewModel:DaXongViewModel}">
                 <view:DaXongView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ThungRacViewModel}">
+                <view:ThungRacView/>
+            </DataTemplate>
 
         </ResourceDictionary>
     </Application.Resources>

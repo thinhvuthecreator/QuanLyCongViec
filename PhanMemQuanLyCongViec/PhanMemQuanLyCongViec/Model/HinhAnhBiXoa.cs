@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PhanMemQuanLyCongViec.Model
 {
-    public class HinhAnh
+    public class HinhAnhBiXoa
     {
         private int maHinh;
         private string tenHinh;
@@ -20,7 +20,6 @@ namespace PhanMemQuanLyCongViec.Model
         private int daXong;
         private decimal conLai;
         private string tenLoai;
-        private string daXongString;
 
         public string TenHinh { get => tenHinh; set => tenHinh = value; }
         public string KichCo { get => kichCo; set => kichCo = value; }
@@ -34,6 +33,23 @@ namespace PhanMemQuanLyCongViec.Model
         public int DaXong { get => daXong; set => daXong = value; }
         public decimal ConLai { get => conLai; set => conLai = value; }
         public string TenLoai { get => tenLoai; set => tenLoai = value; }
-        public string DaXongString { get => daXongString; set => daXongString = value; }
+        public HinhAnhBiXoa()
+        {
+
+        }
+        public HinhAnhBiXoa(HinhAnh hinh)
+        {
+            TenHinh = hinh.TenHinh;
+            KichCo = hinh.KichCo;
+            GiaHinh = hinh.GiaHinh;
+            GiaKhachCoc = hinh.GiaKhachCoc;
+            SoDienThoaiKH = hinh.SoDienThoaiKH;
+            GhiChu = hinh.GhiChu;
+            MaLoai = hinh.MaLoai;
+            NgayGiaoHinh = hinh.NgayGiaoHinh;
+            DaXong = hinh.DaXong;
+            TenLoai = hinh.TenLoai;
+        }
     }
 }
+

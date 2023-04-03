@@ -43,7 +43,7 @@
                 <RadioButton x:Name="imageNotDoneRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="CHƯA XONG" Command="{Binding ChuaXongCommand}">
                 </RadioButton>
 
-                <RadioButton x:Name="recyleBinRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="THÙNG RÁC">
+                <RadioButton x:Name="recyleBinRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="THÙNG RÁC" Command="{Binding ThungRacCommand}">
                 </RadioButton>
 
 
