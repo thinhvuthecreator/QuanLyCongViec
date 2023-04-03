@@ -1,29 +1,28 @@
-﻿using PhanMemQuanLyCongViec.Model;
-using PhanMemQuanLyCongViec.ViewModel.SQL_ThaoTac;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
+using PhanMemQuanLyCongViec.View;
+using PhanMemQuanLyCongViec.Model;
+using System.Data;
+using PhanMemQuanLyCongViec.ViewModel.SQL_ThaoTac;
+using System.Windows.Controls;
+using System.Windows;
 
 namespace PhanMemQuanLyCongViec.ViewModel
 {
-    public class ChuaXongViewModel : BaseViewModel
+    public class DaXongViewModel : BaseViewModel
     {
-    
         public List<HinhAnh> listHinhAnh { get; set; }
-     
-        public ChuaXongViewModel()
+        public DaXongViewModel()
         {
             loadDuLieuHinhAnh();
         }
-
-
         void loadDuLieuHinhAnh()
         {
             listHinhAnh = new List<HinhAnh>();
-            DataTable dataHinhAnh = SQL_Connection.Instance.ExecuteSQL("SELECT * FROM HINHANH H,LOAIHINHANH LH WHERE H.MALOAI = LH.MALOAI AND DAXONG = 0");
+            DataTable dataHinhAnh = SQL_Connection.Instance.ExecuteSQL("SELECT * FROM HINHANH H,LOAIHINHANH LH WHERE H.MALOAI = LH.MALOAI AND DAXONG = 1");
             foreach (DataRow row in dataHinhAnh.Rows)
             {
                 HinhAnh hinh = new HinhAnh();
@@ -41,5 +40,4 @@ namespace PhanMemQuanLyCongViec.ViewModel
 
         }
     }
-    
 }

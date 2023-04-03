@@ -19,6 +19,7 @@ namespace PhanMemQuanLyCongViec.Model
         private string ngayGiaoHinh;
         private int daXong;
         private decimal conLai;
+        private string tenLoai;
 
         public string TenHinh { get => tenHinh; set => tenHinh = value; }
         public string KichCo { get => kichCo; set => kichCo = value; }
@@ -31,5 +32,6 @@ namespace PhanMemQuanLyCongViec.Model
         public int MaHinh { get => maHinh; set => maHinh = value; }
         public int DaXong { get => daXong; set => daXong = value; }
         public decimal ConLai { get => conLai; set => conLai = value; }
+        public string TenLoai { get => tenLoai; set => tenLoai = value; }
     }
 }

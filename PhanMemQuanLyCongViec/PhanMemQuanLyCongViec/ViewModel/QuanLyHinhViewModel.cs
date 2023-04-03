@@ -8,6 +8,8 @@ using PhanMemQuanLyCongViec.View;
 using PhanMemQuanLyCongViec.Model;
 using System.Data;
 using PhanMemQuanLyCongViec.ViewModel.SQL_ThaoTac;
+using System.Windows.Controls;
+using System.Windows;
 
 namespace PhanMemQuanLyCongViec.ViewModel
 {
@@ -16,6 +18,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
         public List<HinhAnh> listHinhAnh { get; set; }
         #region commands
         public RelayCommand<object> addHinhCommand { get; set; }
+        public RelayCommand<ListView> daXongCommand { get; set; }
         #endregion
         public QuanLyHinhViewModel()
         {
@@ -25,6 +28,20 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 ThemHinhView themHinhWindow = new ThemHinhView();
                 themHinhWindow.ShowDialog();
                
+            });
+            daXongCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
+            {
+                HinhAnh hinh =  (HinhAnh)o.SelectedItem;
+                hinh.DaXong = 1;
+                if (HinhAnh_SQL.suaDuLieu(hinh))
+                {
+                    MessageBox.Show("Đã cập nhật !");
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi !");
+                }
+
             });
         }
         void loadDuLieuHinhAnh()
@@ -41,10 +58,10 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 hinh.GiaKhachCoc = decimal.Parse(row[5].ToString());
                 hinh.ConLai = hinh.GiaHinh - hinh.GiaKhachCoc;
                 hinh.GhiChu = row[6].ToString();
-
                 listHinhAnh.Add(hinh);
 
             }
+
         }
 
 

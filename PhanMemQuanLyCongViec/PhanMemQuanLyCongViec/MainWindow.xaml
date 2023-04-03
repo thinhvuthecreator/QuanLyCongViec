@@ -13,7 +13,7 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStyle="None"
-        Title="Quản lý công việc" Height="600" Width="820">
+        Title="Quản lý công việc" Height="600" Width="900">
 
     <Grid Background="#FF2F3742">
         <Grid.RowDefinitions>
@@ -37,10 +37,10 @@
                 <RadioButton x:Name="imageTypeRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="LOẠI HÌNH ẢNH" Command="{Binding LoaiHinhCommand}">
                 </RadioButton>
 
-                <RadioButton x:Name="imageNotDoneRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="CHƯA XONG" Command="{Binding ChuaXongCommand}">
+                <RadioButton x:Name="imageDoneRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="ĐÃ XONG" Command="{Binding DaXongCommand}">
                 </RadioButton>
 
-                <RadioButton x:Name="imageDoneRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="ĐÃ XONG">
+                <RadioButton x:Name="imageNotDoneRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="CHƯA XONG" Command="{Binding ChuaXongCommand}">
                 </RadioButton>
 
                 <RadioButton x:Name="recyleBinRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="THÙNG RÁC">

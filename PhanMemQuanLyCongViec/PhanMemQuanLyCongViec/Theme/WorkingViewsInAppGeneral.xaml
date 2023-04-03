@@ -3,7 +3,7 @@
     <Style TargetType="UserControl" x:Key="UserControlStyle">
         <Style.Setters>
             <Setter Property="Height" Value="535"/>
-            <Setter Property="Width" Value="680"/>
+            <Setter Property="Width" Value="710"/>
         </Style.Setters>
     </Style>
 

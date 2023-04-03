@@ -83,6 +83,7 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ChuaXongViewModel.cs" />
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
+    <Compile Include="ViewModel\DaXongViewModel.cs" />
     <Compile Include="ViewModel\LoaiHinhDaChon.cs" />
     <Compile Include="ViewModel\LoaiHinhView_ViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
@@ -94,6 +95,9 @@
     <Compile Include="ViewModel\ThemLoaiHinh_ViewModel.cs" />
     <Compile Include="View\ChuaXongView.xaml.cs">
       <DependentUpon>ChuaXongView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DaXongView.xaml.cs">
+      <DependentUpon>DaXongView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LoaiHinhView.xaml.cs">
       <DependentUpon>LoaiHinhView.xaml</DependentUpon>
@@ -140,6 +144,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ChuaXongView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DaXongView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
