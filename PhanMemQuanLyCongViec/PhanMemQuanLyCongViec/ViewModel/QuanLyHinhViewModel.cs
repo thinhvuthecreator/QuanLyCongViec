@@ -20,6 +20,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
         public RelayCommand<object> addHinhCommand { get; set; }
         public RelayCommand<ListView> daXongCommand { get; set; }
         public RelayCommand<ListView> xoaHinhCommand { get; set; }
+        public RelayCommand<ListView> capNhatCommand { get; set; }
         #endregion
         public QuanLyHinhViewModel()
         {
@@ -62,6 +63,22 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 }
                 else
                 { }
+            });
+            capNhatCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
+            {
+                HinhAnh hinh = new HinhAnh();
+                hinh = (HinhAnh)o.SelectedItem;
+                CapNhatThongTin capNhatWindow = new CapNhatThongTin();
+                capNhatWindow.maHinhTextBlock.Text = hinh.MaHinh.ToString();
+                capNhatWindow.tenHinhTextbox.Text = hinh.TenHinh;
+                capNhatWindow.kichCoTextbox.Text = hinh.KichCo;
+                capNhatWindow.giaHinhTextbox.Text = hinh.GiaHinh.ToString();
+                capNhatWindow.tienKhachCocTextbox.Text = hinh.GiaKhachCoc.ToString();
+                capNhatWindow.ngayGiaoTextbox.Text = hinh.NgayGiaoHinh;
+                capNhatWindow.SdtTexbox.Text = hinh.SoDienThoaiKH;
+                capNhatWindow.ghiChuTextbox.Text = hinh.GhiChu;
+                capNhatWindow.ShowDialog();
+
             });
         }
         void loadDuLieuHinhAnh()

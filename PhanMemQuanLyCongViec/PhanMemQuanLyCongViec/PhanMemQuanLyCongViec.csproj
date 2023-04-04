@@ -82,6 +82,7 @@
       <DependentUpon>UserControlTT.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\CapNhatThongTinViewModel.cs" />
     <Compile Include="ViewModel\ChuaXongViewModel.cs" />
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
     <Compile Include="ViewModel\DaXongViewModel.cs" />
@@ -96,6 +97,9 @@
     <Compile Include="ViewModel\ThemHinhViewModel.cs" />
     <Compile Include="ViewModel\ThemLoaiHinh_ViewModel.cs" />
     <Compile Include="ViewModel\ThungRacViewModel.cs" />
+    <Compile Include="View\CapNhatThongTin.xaml.cs">
+      <DependentUpon>CapNhatThongTin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ChuaXongView.xaml.cs">
       <DependentUpon>ChuaXongView.xaml</DependentUpon>
     </Compile>
@@ -146,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlTuanThinh\UserControlTT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CapNhatThongTin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

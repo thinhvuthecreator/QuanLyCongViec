@@ -1,4 +1,4 @@
-﻿<Window x:Class="PhanMemQuanLyCongViec.View.ThemHinhView" x:Name="themHinhWindow"
+﻿<Window x:Class="PhanMemQuanLyCongViec.View.CapNhatThongTin" x:Name="capNhatWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,7 +8,6 @@
         Title="ThemHinhView" Height="550" Width="700"
         WindowStartupLocation="CenterScreen">
     <Grid Background="#FF17272B">
-        
         <Grid.Resources>
             <Style TargetType="TextBlock" x:Key="textBlockStyle">
                 <Setter Property="Foreground" Value="LightBlue"/>
@@ -25,7 +24,7 @@
                 <Setter Property="Width" Value="{Binding Width, ElementName=fieldStackPanel}"/>
             </Style>
         </Grid.Resources>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="50"/>
@@ -49,9 +48,10 @@
             <TextBox x:Name="ghiChuTextbox" Style="{StaticResource textBoxStyle}"  Text="{Binding GhiChu, UpdateSourceTrigger=PropertyChanged}"/>
 
             <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                <Button Command="{Binding themHinhCommand}" CommandParameter="{Binding ElementName=themHinhWindow}" Width="80" Margin="140,0,50,0" Background="#FF92A2A1" Content="OK" Foreground="White" FontFamily="Arial Rounded MT Bold"/>
-                <Button Command="{Binding huyCommand}" CommandParameter="{Binding ElementName=themHinhWindow}" x:Name="huyBtn" Width="80" Background="#FF92A2A1" Content="Hủy" Foreground="White" FontFamily="Arial Rounded MT Bold"/>
+                <Button Command="{Binding suaHinhCommand}" CommandParameter="{Binding ElementName=capNhatWindow}" Width="100" Margin="130,0,30,0" Background="#FF92A2A1" Content="Cập nhật" Foreground="White" FontFamily="Arial Rounded MT Bold"/>
+                <Button Command="{Binding huyCommand}" CommandParameter="{Binding ElementName=capNhatWindow}" x:Name="huyBtn" Width="80" Background="#FF92A2A1" Content="Hủy" Foreground="White" FontFamily="Arial Rounded MT Bold"/>
             </StackPanel>
         </StackPanel>
+        <TextBlock Text="{Binding MaHinh, UpdateSourceTrigger=PropertyChanged}" x:Name="maHinhTextBlock" Width="200" Grid.Row="0"/>
     </Grid>
 </Window>
