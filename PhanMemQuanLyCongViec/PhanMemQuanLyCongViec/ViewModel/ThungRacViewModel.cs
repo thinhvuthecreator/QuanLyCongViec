@@ -7,16 +7,58 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace PhanMemQuanLyCongViec.ViewModel
 {
     public class ThungRacViewModel : BaseViewModel
     {
         public List<HinhAnh> listHinhAnh { get; set; }
-
+        #region commands
+        public RelayCommand<ListView> khoiPhucCommand { get; set; }
+        public RelayCommand<ListView> xoaVinhVienCommand { get; set; }
+        #endregion
         public ThungRacViewModel()
         {
             loadDuLieuHinhAnh();
+            khoiPhucCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
+            {
+                HinhAnh hinh = (HinhAnh)o.SelectedItem;
+                MessageBoxResult choice = MessageBox.Show("Bạn có muốn khôi phục thông tin hình này ?", "", MessageBoxButton.YesNo);
+                if (choice == MessageBoxResult.Yes)
+                {
+                    if (HinhAnhBiXoa_SQL.xoaDuLieu(hinh) && HinhAnh_SQL.themDuLieu(hinh))
+                    {
+                        MessageBox.Show("Đã khôi phục !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Khôi phục thất bại !");
+                    }
+                }
+                else
+                { }
+
+            });
+            xoaVinhVienCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
+            {
+
+                HinhAnh hinh = (HinhAnh)o.SelectedItem;
+                MessageBoxResult choice = MessageBox.Show("Bạn có muốn xóa vĩnh viễn thông tin hình này ?", "", MessageBoxButton.YesNo);
+                if (choice == MessageBoxResult.Yes)
+                {
+                    if (HinhAnhBiXoa_SQL.xoaDuLieu(hinh))
+                    {
+                        MessageBox.Show("Đã xóa vĩnh viễn !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại !");
+                    }
+                }
+                else
+                { }
+            });
         }
 
 

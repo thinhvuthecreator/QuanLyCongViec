@@ -7,23 +7,31 @@
         mc:Ignorable="d"
         Style="{StaticResource UserControlStyle}">
     <Grid Background="Transparent">
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Text="Scene 2" Foreground="White" FontFamily="Arial Rounded MT Bold">
-        </TextBlock>
-        <Border  Background="White" Grid.Column="1" Grid.Row="1" CornerRadius="15">
-            <ListView ItemsSource="{Binding listHinhAnh}">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding TenHinh}" Header="Tên" Width="84"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding NgayGiaoHinh}" Header="Ngày giao" Width="124"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding SoDienThoaiKH}" Header="Số điện thoại" Width="142"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding GiaHinh}" Header="Giá" Width="90"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding GiaKhachCoc}" Header="Khách cọc" Width="124"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding ConLai}" Header="Còn lại" Width="105"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding GhiChu}" Header="Ghi chú" Width="109"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding TenLoai}" Header="Loại hình" Width="109"/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Border  Background="White" Grid.Row="0" CornerRadius="15"  Height="540">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <ListView ItemsSource="{Binding listHinhAnh}" x:Name="hinhAnhListView">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding TenHinh}" Header="Tên" Width="84"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding NgayGiaoHinh}" Header="Ngày giao" Width="124"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding SoDienThoaiKH}" Header="Số điện thoại" Width="142"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding GiaHinh}" Header="Giá" Width="90"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding GiaKhachCoc}" Header="Khách cọc" Width="124"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding ConLai}" Header="Còn lại" Width="105"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding GhiChu}" Header="Ghi chú" Width="109"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding TenLoai}" Header="Loại hình" Width="111"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </ScrollViewer>
         </Border>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Width="880" >
+            <Button Content="Chưa xong" Width="100" Background="#FF405E63" Command="{Binding chuaXongCommand}" CommandParameter="{Binding ElementName=hinhAnhListView}"/>
+            <Button Content="Chuyển vào thùng rác" Width="173" Background="#FF405E63" Margin="10,0,0,0" Command="{Binding xoaHinhCommand}" CommandParameter="{Binding ElementName=hinhAnhListView}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

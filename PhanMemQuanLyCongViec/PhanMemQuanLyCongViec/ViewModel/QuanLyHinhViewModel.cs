@@ -37,8 +37,6 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 if (HinhAnh_SQL.suaDuLieu(hinh))
                 {
                     MessageBox.Show("Đã cập nhật !");
-                    MessageBox.Show(hinh.TenHinh);
-                    MessageBox.Show(hinh.MaHinh.ToString());
                 }
                 else
                 {
@@ -68,7 +66,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
         }
         void loadDuLieuHinhAnh()
         {
-            listHinhAnh = new List<HinhAnh>();
+            listHinhAnh = new List<HinhAnh>(); 
             DataTable dataHinhAnh = SQL_Connection.Instance.ExecuteSQL("SELECT * FROM HINHANH WHERE MALOAI = " + LoaiHinhDaChon.MaLoai);
             foreach(DataRow row in dataHinhAnh.Rows)
             {
