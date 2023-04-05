@@ -18,6 +18,7 @@
                     <ListView.View>
                         <GridView>
                             <GridViewColumn DisplayMemberBinding="{Binding TenHinh}" Header="Tên" Width="84"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding KichCo}" Header="Kích cỡ" Width="125"/>
                             <GridViewColumn DisplayMemberBinding="{Binding NgayGiaoHinh}" Header="Ngày giao" Width="124"/>
                             <GridViewColumn DisplayMemberBinding="{Binding SoDienThoaiKH}" Header="Số điện thoại" Width="142"/>
                             <GridViewColumn DisplayMemberBinding="{Binding GiaHinh}" Header="Giá" Width="90"/>

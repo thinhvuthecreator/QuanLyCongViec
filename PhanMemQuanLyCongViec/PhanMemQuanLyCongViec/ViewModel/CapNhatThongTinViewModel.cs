@@ -12,20 +12,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
     public class CapNhatThongTinViewModel : BaseViewModel
     {
         #region model
-        public HinhAnh hinhAnh = new HinhAnh();
-        #endregion
-
-        #region properties
-        public string TenHinh { get; set; }
-        public string KichCo { get; set; }
-        public decimal GiaHinh { get; set; }
-        public decimal GiaKhachCoc { get; set; }
-        public string SoDienThoaiKH { get; set; }
-        public string GhiChu { get; set; }
-        public int MaLoai { get; set; }
-        public string NgayGiaoHinh { get; set; }
-        public int MaHinh { get; set; }
-        public int DaXong { get; set; } = 0;
+        public HinhAnh hinhAnh { get; set; } = new HinhAnh();
         #endregion
 
         #region commands
@@ -39,11 +26,10 @@ namespace PhanMemQuanLyCongViec.ViewModel
         {
             suaHinhCommand = new RelayCommand<Window>((o) => { return true; }, (o) =>
             {
-
-                khoiTaoDuLieuHinhAnh(hinhAnh);
+                hinhAnh.MaHinh = ThongTinHinhDaChon.MaHinh; // return dữ liệu mã hình đã chọn vào hinhAnh để cập nhật
                 if (HinhAnh_SQL.suaDuLieu(hinhAnh))
                 {
-                    MessageBox.Show("Cập nhật  thành công !");
+                    MessageBox.Show("Cập nhật thành công !");
                     o.Close();
                 }
                 else
@@ -58,20 +44,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
         }
 
         #region methods
-        void khoiTaoDuLieuHinhAnh(HinhAnh hAnh)
-        {
-            hAnh.MaHinh = MaHinh;
-            hAnh.TenHinh = TenHinh;
-            hAnh.KichCo = KichCo;
-            hAnh.GiaHinh = GiaHinh;
-            hAnh.GiaKhachCoc = GiaKhachCoc;
-            hAnh.SoDienThoaiKH = SoDienThoaiKH;
-            hAnh.GhiChu = GhiChu;
-            hAnh.NgayGiaoHinh = NgayGiaoHinh;
-            hAnh.DaXong = DaXong;
-            hAnh.MaLoai = LoaiHinhDaChon.MaLoai;
 
-        }
         #endregion
 
     }

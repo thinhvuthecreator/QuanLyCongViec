@@ -21,6 +21,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
         public RelayCommand<ListView> daXongCommand { get; set; }
         public RelayCommand<ListView> xoaHinhCommand { get; set; }
         public RelayCommand<ListView> capNhatCommand { get; set; }
+        public RelayCommand<ListView> iTemListDaChon { get; set; }
         #endregion
         public QuanLyHinhViewModel()
         {
@@ -66,9 +67,22 @@ namespace PhanMemQuanLyCongViec.ViewModel
             });
             capNhatCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
             {
-                HinhAnh hinh = new HinhAnh();
-                hinh = (HinhAnh)o.SelectedItem;
+                HinhAnh hinh = (HinhAnh)o.SelectedItem;
+               
                 CapNhatThongTin capNhatWindow = new CapNhatThongTin();
+                #region thongTinHinhDaChon
+                ThongTinHinhDaChon.MaHinh = hinh.MaHinh;
+                ThongTinHinhDaChon.TenHinh = hinh.TenHinh;
+                ThongTinHinhDaChon.KichCo = hinh.KichCo;
+                ThongTinHinhDaChon.NgayGiaoHinh = hinh.NgayGiaoHinh;
+                ThongTinHinhDaChon.SoDienThoaiKH = hinh.SoDienThoaiKH;
+                ThongTinHinhDaChon.MaLoai = hinh.MaLoai;
+                ThongTinHinhDaChon.DaXong = hinh.DaXong;
+                ThongTinHinhDaChon.GiaHinh = hinh.GiaHinh;
+                ThongTinHinhDaChon.GiaKhachCoc = hinh.GiaKhachCoc;
+                ThongTinHinhDaChon.GhiChu = hinh.GhiChu;
+                #endregion
+                
                 capNhatWindow.maHinhTextBlock.Text = hinh.MaHinh.ToString();
                 capNhatWindow.tenHinhTextbox.Text = hinh.TenHinh;
                 capNhatWindow.kichCoTextbox.Text = hinh.KichCo;
@@ -79,7 +93,9 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 capNhatWindow.ghiChuTextbox.Text = hinh.GhiChu;
                 capNhatWindow.ShowDialog();
 
+
             });
+    
         }
         void loadDuLieuHinhAnh()
         {
@@ -90,6 +106,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 HinhAnh hinh = new HinhAnh();
                 hinh.MaHinh = int.Parse(row[0].ToString());
                 hinh.TenHinh = row[1].ToString();
+                hinh.KichCo = row[9].ToString();
                 hinh.NgayGiaoHinh = row[2].ToString();
                 hinh.SoDienThoaiKH = row[3].ToString();
                 hinh.GiaHinh = decimal.Parse(row[4].ToString());

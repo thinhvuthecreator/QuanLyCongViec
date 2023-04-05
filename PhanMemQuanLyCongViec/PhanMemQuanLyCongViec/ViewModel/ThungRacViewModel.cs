@@ -70,6 +70,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
             {
                 HinhAnh hinh = new HinhAnh();
                 hinh.MaHinh = int.Parse(row[0].ToString());
+                hinh.KichCo = row[9].ToString();
                 hinh.MaLoai = int.Parse(row[8].ToString());
                 hinh.TenHinh = row[1].ToString();
                 hinh.SoDienThoaiKH = row[3].ToString();

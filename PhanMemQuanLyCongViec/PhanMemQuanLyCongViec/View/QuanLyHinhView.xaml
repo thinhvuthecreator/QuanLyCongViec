@@ -10,7 +10,8 @@
         Title="QuanLyHinhView" Height="550" Width="1200"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize" >
+
     <Grid Background="#FF1C2223">
 
         <Grid.Resources>
@@ -50,6 +51,7 @@
                     <ListView.View>
                         <GridView>
                             <GridViewColumn DisplayMemberBinding="{Binding TenHinh}" Header="Tên" Width="100"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding KichCo}" Header="Kích cỡ" Width="125"/>
                             <GridViewColumn DisplayMemberBinding="{Binding NgayGiaoHinh}" Header="Ngày giao" Width="125"/>
                             <GridViewColumn DisplayMemberBinding="{Binding SoDienThoaiKH}" Header="Số điện thoại" Width="142"/>
                             <GridViewColumn DisplayMemberBinding="{Binding GiaHinh}" Header="Giá" Width="100"/>
@@ -71,7 +73,7 @@
                 <Button Background="#FF469E9A" Width="50" Height="35" Foreground="Black" FontSize="11" ToolTip="Chuyển vào thùng rác" Margin="0,0,0,10" Command="{Binding xoaHinhCommand}" CommandParameter="{Binding ElementName=hinhAnhListView}">
                     <materialDesign:PackIcon Kind="Delete" Width="20" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Button>
-                <Button Background="#FF469E9A" Width="50" Height="35" Foreground="Black" FontSize="11" ToolTip="Cập nhật thông tin" Command="{Binding capNhatCommand}" CommandParameter="{Binding ElementName=hinhAnhListView}">
+                <Button Background="#FF469E9A" Width="50" Height="35" Foreground="Black" FontSize="11" ToolTip="Cập nhật thông tin" Command="{Binding  capNhatCommand}" CommandParameter="{Binding ElementName=hinhAnhListView}">
                     <materialDesign:PackIcon Kind="TooltipEdit" Width="20" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Button>
 

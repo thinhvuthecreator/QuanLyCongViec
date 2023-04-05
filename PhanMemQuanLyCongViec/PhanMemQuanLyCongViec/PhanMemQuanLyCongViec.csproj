@@ -96,6 +96,7 @@
     <Compile Include="ViewModel\SQL_ThaoTac\SQL_Connection.cs" />
     <Compile Include="ViewModel\ThemHinhViewModel.cs" />
     <Compile Include="ViewModel\ThemLoaiHinh_ViewModel.cs" />
+    <Compile Include="ViewModel\ThongTinHinhDaChon.cs" />
     <Compile Include="ViewModel\ThungRacViewModel.cs" />
     <Compile Include="View\CapNhatThongTin.xaml.cs">
       <DependentUpon>CapNhatThongTin.xaml</DependentUpon>

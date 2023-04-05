@@ -33,25 +33,25 @@
         <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="Thông tin hình ảnh" Foreground="White" FontSize="30" FontFamily="Arial Rounded MT Bold"/>
         <StackPanel x:Name="fieldStackPanel" Grid.Row="2" Width="500">
             <TextBlock Text="Tên hình ảnh" Style="{StaticResource textBlockStyle}" />
-            <TextBox x:Name="tenHinhTextbox" Style="{StaticResource textBoxStyle}" Text="{Binding TenHinh, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tenHinhTextbox" Style="{StaticResource textBoxStyle}" DataContext="{Binding hinhAnh}" Text="{Binding Path=TenHinh,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
             <TextBlock Text="Kích cỡ" Style="{StaticResource textBlockStyle}"/>
-            <TextBox x:Name="kichCoTextbox" Style="{StaticResource textBoxStyle}"  Text="{Binding KichCo, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="kichCoTextbox" Style="{StaticResource textBoxStyle}"  DataContext="{Binding hinhAnh}" Text="{Binding Path=KichCo,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
             <TextBlock Text="Giá hình" Style="{StaticResource textBlockStyle}"/>
-            <TextBox x:Name="giaHinhTextbox" Style="{StaticResource textBoxStyle}"  Text="{Binding GiaHinh, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="giaHinhTextbox" Style="{StaticResource textBoxStyle}"  DataContext="{Binding hinhAnh}" Text="{Binding Path=GiaHinh,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
             <TextBlock Text="Tiền khách cọc" Style="{StaticResource textBlockStyle}"/>
-            <TextBox x:Name="tienKhachCocTextbox" Style="{StaticResource textBoxStyle}"  Text="{Binding GiaKhachCoc, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tienKhachCocTextbox" Style="{StaticResource textBoxStyle}"  DataContext="{Binding hinhAnh}" Text="{Binding Path=GiaKhachCoc,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
             <TextBlock Text="Ngày giao" Style="{StaticResource textBlockStyle}"/>
-            <TextBox x:Name="ngayGiaoTextbox" Style="{StaticResource textBoxStyle}"  Text="{Binding NgayGiaoHinh, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="ngayGiaoTextbox" Style="{StaticResource textBoxStyle}"  DataContext="{Binding hinhAnh}" Text="{Binding Path=NgayGiaoHinh,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
             <TextBlock Text="Số điện thoại khách giao" Style="{StaticResource textBlockStyle}"/>
-            <TextBox x:Name="SdtTexbox" Style="{StaticResource textBoxStyle}"  Text="{Binding SoDienThoaiKH, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="SdtTexbox" Style="{StaticResource textBoxStyle}"  DataContext="{Binding hinhAnh}" Text="{Binding Path=SoDienThoaiKH,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
             <TextBlock Text="Ghi chú" Style="{StaticResource textBlockStyle}"/>
-            <TextBox x:Name="ghiChuTextbox" Style="{StaticResource textBoxStyle}"  Text="{Binding GhiChu, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="ghiChuTextbox" Style="{StaticResource textBoxStyle}"  DataContext="{Binding hinhAnh}" Text="{Binding Path=GhiChu,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
 
             <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                 <Button Command="{Binding suaHinhCommand}" CommandParameter="{Binding ElementName=capNhatWindow}" Width="100" Margin="130,0,30,0" Background="#FF92A2A1" Content="Cập nhật" Foreground="White" FontFamily="Arial Rounded MT Bold"/>
                 <Button Command="{Binding huyCommand}" CommandParameter="{Binding ElementName=capNhatWindow}" x:Name="huyBtn" Width="80" Background="#FF92A2A1" Content="Hủy" Foreground="White" FontFamily="Arial Rounded MT Bold"/>
             </StackPanel>
         </StackPanel>
-        <TextBlock Text="{Binding MaHinh, UpdateSourceTrigger=PropertyChanged}" x:Name="maHinhTextBlock" Width="200" Grid.Row="0"/>
+        <TextBlock x:Name="maHinhTextBlock" Width="200" Grid.Row="0"/>
     </Grid>
 </Window>

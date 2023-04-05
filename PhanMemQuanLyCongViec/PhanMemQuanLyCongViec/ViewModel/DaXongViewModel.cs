@@ -66,6 +66,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 HinhAnh hinh = new HinhAnh();
                 hinh.MaHinh = int.Parse(row[0].ToString());
                 hinh.TenHinh = row[1].ToString();
+                hinh.KichCo = row[9].ToString();
                 hinh.NgayGiaoHinh = row[2].ToString();
                 hinh.SoDienThoaiKH = row[3].ToString();
                 hinh.GiaHinh = decimal.Parse(row[4].ToString());

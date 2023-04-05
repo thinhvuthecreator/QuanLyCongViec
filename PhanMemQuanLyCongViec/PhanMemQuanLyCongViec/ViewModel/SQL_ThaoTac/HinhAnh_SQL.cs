@@ -51,7 +51,7 @@ namespace PhanMemQuanLyCongViec.ViewModel.SQL_ThaoTac
             bool isSuccess = true;
             try
             {
-                string updateQuerry = "UPDATE HINHANH SET TENHINH = N'" + hinh.TenHinh + "', NGAYGIAOHINH = N'" + hinh.NgayGiaoHinh + "',SDTKHACHGIAO = N'" + hinh.SoDienThoaiKH + "',GIAHINH =" + hinh.GiaHinh +",TIENKHACHCOC = " + hinh.GiaKhachCoc + ",GHICHU = N'" + hinh.GhiChu + "',DAXONG = " + hinh.DaXong + " WHERE MAHINH =" + hinh.MaHinh;
+                string updateQuerry = "UPDATE HINHANH SET TENHINH = N'" + hinh.TenHinh + "', NGAYGIAOHINH = N'" + hinh.NgayGiaoHinh + "',SDTKHACHGIAO = N'" + hinh.SoDienThoaiKH + "',GIAHINH =" + hinh.GiaHinh +",TIENKHACHCOC = " + hinh.GiaKhachCoc + ",GHICHU = N'" + hinh.GhiChu + "',DAXONG = " + hinh.DaXong + ",KICHCO =N'" + hinh.KichCo + "' WHERE MAHINH =" + hinh.MaHinh;
                 SQL_Connection.Instance.ExecuteNONquerrySQL(updateQuerry);
             }
             catch
