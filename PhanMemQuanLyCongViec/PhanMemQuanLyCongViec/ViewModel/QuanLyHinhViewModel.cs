@@ -68,7 +68,8 @@ namespace PhanMemQuanLyCongViec.ViewModel
             capNhatCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
             {
                 HinhAnh hinh = (HinhAnh)o.SelectedItem;
-               
+                CapNhatThongTinViewModel.hinhAnh = new HinhAnh();
+                CapNhatThongTinViewModel.hinhAnh = hinh;
                 CapNhatThongTin capNhatWindow = new CapNhatThongTin();
                 #region thongTinHinhDaChon
                 ThongTinHinhDaChon.MaHinh = hinh.MaHinh;

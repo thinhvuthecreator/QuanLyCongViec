@@ -12,7 +12,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
     public class CapNhatThongTinViewModel : BaseViewModel
     {
         #region model
-        public HinhAnh hinhAnh { get; set; } = new HinhAnh();
+        static public HinhAnh hinhAnh { get; set; }
         #endregion
 
         #region commands
@@ -44,7 +44,19 @@ namespace PhanMemQuanLyCongViec.ViewModel
         }
 
         #region methods
+        void khoiTaoDuLieuHinhAnh(HinhAnh hAnh)
+        { 
+            hAnh.TenHinh = ThongTinHinhDaChon.TenHinh;
+            hAnh.KichCo = ThongTinHinhDaChon.KichCo;
+            hAnh.GiaHinh = ThongTinHinhDaChon.GiaHinh;
+            hAnh.GiaKhachCoc = ThongTinHinhDaChon.GiaKhachCoc;
+            hAnh.SoDienThoaiKH = ThongTinHinhDaChon.SoDienThoaiKH;
+            hAnh.GhiChu = ThongTinHinhDaChon.GhiChu;
+            hAnh.NgayGiaoHinh = ThongTinHinhDaChon.NgayGiaoHinh;
+            hAnh.DaXong = ThongTinHinhDaChon.DaXong;
+            hAnh.MaLoai = LoaiHinhDaChon.MaLoai;
 
+        }
         #endregion
 
     }
