@@ -32,12 +32,12 @@ namespace PhanMemQuanLyCongViec.ViewModel.SQL_ThaoTac
             }
             return isSuccess;
         }
-        public static bool xoaDuLieu(LoaiHinhAnh loaiHinh)
+        public static bool xoaDuLieu(string  tenLoai)   // xóa tên loại vì tên loại là unique ko bị trùng lặp
         {
             bool isSuccess = true;
             try
             {
-                string deleteQuerry = "DELETE FROM LOAIHINHANH WHERE MALOAI = " + loaiHinh.MaLoaiHinh;
+                string deleteQuerry = "DELETE FROM LOAIHINHANH WHERE TENLOAI = N'" + tenLoai +"'";
                 SQL_Connection.Instance.ExecuteNONquerrySQL(deleteQuerry);
             }
             catch

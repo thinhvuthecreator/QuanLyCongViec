@@ -90,6 +90,7 @@
     <Compile Include="ViewModel\LoaiHinhView_ViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\QuanLyHinhViewModel.cs" />
+    <Compile Include="ViewModel\SQL_ThaoTac\ButtonDaNhan.cs" />
     <Compile Include="ViewModel\SQL_ThaoTac\HinhAnhBiXoa_SQL.cs" />
     <Compile Include="ViewModel\SQL_ThaoTac\HinhAnh_SQL.cs" />
     <Compile Include="ViewModel\SQL_ThaoTac\LoaiHinhAnh_SQL.cs" />
