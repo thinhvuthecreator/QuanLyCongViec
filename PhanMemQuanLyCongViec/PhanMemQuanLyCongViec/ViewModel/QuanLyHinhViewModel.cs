@@ -53,7 +53,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 MessageBoxResult choice = MessageBox.Show("Bạn có muốn chuyển thông tin hình này vào thùng rác ?","",MessageBoxButton.YesNo);
                 if (choice == MessageBoxResult.Yes)
                 {
-                    if ( HinhAnh_SQL.xoaDuLieu(hinh) &&  HinhAnhBiXoa_SQL.themDuLieu(hinh))
+                    if (HinhAnh_SQL.xoaDuLieu(hinh) && HinhAnhBiXoa_SQL.themDuLieu(hinh))
                     {
                         MessageBox.Show("Đã chuyển vào thùng rác !");
                     }
