@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PhanMemQuanLyCongViec.Model;
 using PhanMemQuanLyCongViec.ViewModel;
+using PhanMemQuanLyCongViec.ViewModel.SQL_ThaoTac;
 
 namespace PhanMemQuanLyCongViec.View
 {
@@ -28,5 +30,6 @@ namespace PhanMemQuanLyCongViec.View
             this.DataContext = quanLyHinhVM = new QuanLyHinhViewModel();
         }
 
+    
     }
 }

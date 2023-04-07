@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhanMemQuanLyCongViec.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:uc="clr-namespace:PhanMemQuanLyCongViec.UserControlTuanThinh"
         mc:Ignorable="d"
         Title="QuanLyHinhView" Height="550" Width="1200"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        ResizeMode="NoResize" >
+        ResizeMode="NoResize">
 
     <Grid Background="#FF1C2223">
 
