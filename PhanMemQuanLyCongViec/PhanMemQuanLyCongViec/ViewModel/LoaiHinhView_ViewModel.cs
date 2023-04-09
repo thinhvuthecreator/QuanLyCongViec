@@ -37,7 +37,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
         #region methods
         void loadDuLieuCacLoaiHinh(WrapPanel p)
         {
-           
+          
             DataTable dataLoaiHinh = LoaiHinhAnh_SQL.loadDulieu(); // trả về tất cả các loại hình
             foreach(DataRow row in dataLoaiHinh.Rows)
             {
@@ -69,8 +69,6 @@ namespace PhanMemQuanLyCongViec.ViewModel
                     loaiHinhBtn.Click += LoaiHinhBtn_Click;
                     loaiHinhBtn.MouseRightButtonDown += LoaiHinhBtn_MouseRightButtonDown;
                     p.Children.Add(loaiHinhBtn);
-
-
                 }
                 else { }
             }

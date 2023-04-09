@@ -13,6 +13,12 @@
         WindowStyle="None"
         ResizeMode="NoResize">
 
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Activated">
+            <i:InvokeCommandAction  Command="{Binding loadCommand}"  CommandParameter="{Binding ElementName=hinhAnhListView}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
     <Grid Background="#FF1C2223">
 
         <Grid.Resources>

@@ -10,18 +10,19 @@ using System.Data;
 using PhanMemQuanLyCongViec.ViewModel.SQL_ThaoTac;
 using System.Windows.Controls;
 using System.Windows;
+using System.Collections.ObjectModel;
 
 namespace PhanMemQuanLyCongViec.ViewModel
 {
     public class QuanLyHinhViewModel : BaseViewModel
     {
-        public List<HinhAnh> listHinhAnh { get; set; }
+        public ObservableCollection<HinhAnh> listHinhAnh { get; set; }
         #region commands
         public RelayCommand<object> addHinhCommand { get; set; }
         public RelayCommand<ListView> daXongCommand { get; set; }
         public RelayCommand<ListView> xoaHinhCommand { get; set; }
         public RelayCommand<ListView> capNhatCommand { get; set; }
-        public RelayCommand<ListView> iTemListDaChon { get; set; }
+        public RelayCommand<ListView> loadCommand { get; set; }
         #endregion
         public QuanLyHinhViewModel()
         {
@@ -96,11 +97,15 @@ namespace PhanMemQuanLyCongViec.ViewModel
 
 
             });
+            loadCommand = new RelayCommand<ListView>((o) => { return true; },(o) => 
+            {
+                loadDuLieuHinhAnh(o);
+            });
     
         }
-        void loadDuLieuHinhAnh()
+        void loadDuLieuHinhAnh(ListView listView)
         {
-            listHinhAnh = new List<HinhAnh>(); 
+            listHinhAnh = new ObservableCollection<HinhAnh>();
             DataTable dataHinhAnh = SQL_Connection.Instance.ExecuteSQL("SELECT * FROM HINHANH WHERE MALOAI = " + LoaiHinhDaChon.MaLoai);
             foreach(DataRow row in dataHinhAnh.Rows)
             {
@@ -120,8 +125,32 @@ namespace PhanMemQuanLyCongViec.ViewModel
 
             }
 
-        }
+            listView.ItemsSource = listHinhAnh;
 
+        }
+        void loadDuLieuHinhAnh()
+        {
+            listHinhAnh = new ObservableCollection<HinhAnh>();
+            DataTable dataHinhAnh = SQL_Connection.Instance.ExecuteSQL("SELECT * FROM HINHANH WHERE MALOAI = " + LoaiHinhDaChon.MaLoai);
+            foreach (DataRow row in dataHinhAnh.Rows)
+            {
+                HinhAnh hinh = new HinhAnh();
+                hinh.MaHinh = int.Parse(row[0].ToString());
+                hinh.TenHinh = row[1].ToString();
+                hinh.KichCo = row[9].ToString();
+                hinh.NgayGiaoHinh = row[2].ToString();
+                hinh.SoDienThoaiKH = row[3].ToString();
+                hinh.GiaHinh = decimal.Parse(row[4].ToString());
+                hinh.GiaKhachCoc = decimal.Parse(row[5].ToString());
+                hinh.ConLai = hinh.GiaHinh - hinh.GiaKhachCoc;
+                hinh.GhiChu = row[6].ToString();
+                hinh.MaLoai = int.Parse(row[8].ToString());
+                hinh.DaXong = int.Parse(row[7].ToString());
+                listHinhAnh.Add(hinh);
+
+            }
+
+        }
 
 
 
