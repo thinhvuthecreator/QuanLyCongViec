@@ -26,42 +26,56 @@ namespace PhanMemQuanLyCongViec.ViewModel
             khoiPhucCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
             {
                 HinhAnh hinh = (HinhAnh)o.SelectedItem;
-                MessageBoxResult choice = MessageBox.Show("Bạn có muốn khôi phục thông tin hình này ?", "", MessageBoxButton.YesNo);
-                if (choice == MessageBoxResult.Yes)
+                if (hinh != null)
                 {
-                    if (HinhAnhBiXoa_SQL.xoaDuLieu(hinh) && HinhAnh_SQL.themDuLieu(hinh))
+                    MessageBoxResult choice = MessageBox.Show("Bạn có muốn khôi phục thông tin hình này ?", "", MessageBoxButton.YesNo);
+                    if (choice == MessageBoxResult.Yes)
                     {
-                        MessageBox.Show("Đã khôi phục !");
-                        loadDuLieuHinhAnh(o);
+                        if (HinhAnhBiXoa_SQL.xoaDuLieu(hinh) && HinhAnh_SQL.themDuLieu(hinh))
+                        {
+                            MessageBox.Show("Đã khôi phục !");
+                            loadDuLieuHinhAnh(o);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Khôi phục thất bại !");
+                        }
                     }
                     else
-                    {
-                        MessageBox.Show("Khôi phục thất bại !");
-                    }
+                    { }
                 }
                 else
-                { }
+                {
+                    MessageBox.Show("Vui lòng chọn hình cần khôi phục !");
+                }
 
             });
             xoaVinhVienCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
             {
 
                 HinhAnh hinh = (HinhAnh)o.SelectedItem;
-                MessageBoxResult choice = MessageBox.Show("Bạn có muốn xóa vĩnh viễn thông tin hình này ?", "", MessageBoxButton.YesNo);
-                if (choice == MessageBoxResult.Yes)
+                if (hinh != null)
                 {
-                    if (HinhAnhBiXoa_SQL.xoaDuLieu(hinh))
+                    MessageBoxResult choice = MessageBox.Show("Bạn có muốn xóa vĩnh viễn thông tin hình này ?", "", MessageBoxButton.YesNo);
+                    if (choice == MessageBoxResult.Yes)
                     {
-                        MessageBox.Show("Đã xóa vĩnh viễn !");
-                        loadDuLieuHinhAnh(o);
+                        if (HinhAnhBiXoa_SQL.xoaDuLieu(hinh))
+                        {
+                            MessageBox.Show("Đã xóa vĩnh viễn !");
+                            loadDuLieuHinhAnh(o);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa thất bại !");
+                        }
                     }
                     else
-                    {
-                        MessageBox.Show("Xóa thất bại !");
-                    }
+                    { }
                 }
                 else
-                { }
+                {
+                    MessageBox.Show("Vui lòng chọn hình cần xóa vĩnh viễn !");
+                }
             });
             loadCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
             {

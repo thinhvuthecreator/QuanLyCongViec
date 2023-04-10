@@ -27,38 +27,51 @@ namespace PhanMemQuanLyCongViec.ViewModel
             chuaXongCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
             {
                 HinhAnh hinh = (HinhAnh)o.SelectedItem;
-                hinh.DaXong = 0;
-                if (HinhAnh_SQL.suaDuLieu(hinh))
+                if (hinh != null)
                 {
-                    MessageBox.Show("Đã cập nhật !");
-                    loadDuLieuHinhAnh(o);
-                 
+                    hinh.DaXong = 0;
+                    if (HinhAnh_SQL.suaDuLieu(hinh))
+                    {
+                        MessageBox.Show("Đã cập nhật !");
+                        loadDuLieuHinhAnh(o);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi !");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi !");
+                    MessageBox.Show("Vui lòng chọn hình cần cập nhật !");
                 }
-
             });
             xoaHinhCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
             {
 
                 HinhAnh hinh = (HinhAnh)o.SelectedItem;
-                MessageBoxResult choice = MessageBox.Show("Bạn có muốn chuyển thông tin hình này vào thùng rác ?", "", MessageBoxButton.YesNo);
-                if (choice == MessageBoxResult.Yes)
+                if (hinh != null)
                 {
-                    if (HinhAnh_SQL.xoaDuLieu(hinh) && HinhAnhBiXoa_SQL.themDuLieu(hinh))
+                    MessageBoxResult choice = MessageBox.Show("Bạn có muốn chuyển thông tin hình này vào thùng rác ?", "", MessageBoxButton.YesNo);
+                    if (choice == MessageBoxResult.Yes)
                     {
-                        MessageBox.Show("Đã chuyển vào thùng rác !");
-                        loadDuLieuHinhAnh(o);
+                        if (HinhAnh_SQL.xoaDuLieu(hinh) && HinhAnhBiXoa_SQL.themDuLieu(hinh))
+                        {
+                            MessageBox.Show("Đã chuyển vào thùng rác !");
+                            loadDuLieuHinhAnh(o);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa thất bại !");
+                        }
                     }
                     else
-                    {
-                        MessageBox.Show("Xóa thất bại !");
-                    }
+                    { }
                 }
                 else
-                { }
+                {
+                    MessageBox.Show("Vui lòng chọn hình cần chuyển vào thùng rác !");
+                }
             });
             loadCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
             {

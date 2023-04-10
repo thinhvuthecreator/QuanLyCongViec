@@ -36,14 +36,21 @@ namespace PhanMemQuanLyCongViec.ViewModel
             daXongCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
             {
                 HinhAnh hinh =  (HinhAnh)o.SelectedItem;
-                hinh.DaXong = 1;
-                if (HinhAnh_SQL.suaDuLieu(hinh))
+                if (hinh == null)
                 {
-                    MessageBox.Show("Đã cập nhật !");
+                    MessageBox.Show("Vui lòng chọn hình cần cập nhật");
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi !");
+                    hinh.DaXong = 1;
+                    if (HinhAnh_SQL.suaDuLieu(hinh))
+                    {
+                        MessageBox.Show("Đã cập nhật !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi !");
+                    }
                 }
 
             });
@@ -51,50 +58,63 @@ namespace PhanMemQuanLyCongViec.ViewModel
             {
 
                 HinhAnh hinh = (HinhAnh)o.SelectedItem;
-                MessageBoxResult choice = MessageBox.Show("Bạn có muốn chuyển thông tin hình này vào thùng rác ?","",MessageBoxButton.YesNo);
-                if (choice == MessageBoxResult.Yes)
+                if (hinh != null)
                 {
-                    if (HinhAnh_SQL.xoaDuLieu(hinh) && HinhAnhBiXoa_SQL.themDuLieu(hinh))
+                    MessageBoxResult choice = MessageBox.Show("Bạn có muốn chuyển thông tin hình này vào thùng rác ?", "", MessageBoxButton.YesNo);
+                    if (choice == MessageBoxResult.Yes)
                     {
-                        MessageBox.Show("Đã chuyển vào thùng rác !");
+                        if (HinhAnh_SQL.xoaDuLieu(hinh) && HinhAnhBiXoa_SQL.themDuLieu(hinh))
+                        {
+                            MessageBox.Show("Đã chuyển vào thùng rác !");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa thất bại !");
+                        }
                     }
                     else
-                    {
-                        MessageBox.Show("Xóa thất bại !");
-                    }
+                    { }
                 }
                 else
-                { }
+                {
+                    MessageBox.Show("Vui lòng chọn hình cần chuyển vào thùng rác !");
+                }
             });
             capNhatCommand = new RelayCommand<ListView>((o) => { return true; }, (o) =>
             {
                 HinhAnh hinh = (HinhAnh)o.SelectedItem;
-                CapNhatThongTinViewModel.hinhAnh = new HinhAnh();
-                CapNhatThongTinViewModel.hinhAnh = hinh;
-                CapNhatThongTin capNhatWindow = new CapNhatThongTin();
-                #region thongTinHinhDaChon
-                ThongTinHinhDaChon.MaHinh = hinh.MaHinh;
-                ThongTinHinhDaChon.TenHinh = hinh.TenHinh;
-                ThongTinHinhDaChon.KichCo = hinh.KichCo;
-                ThongTinHinhDaChon.NgayGiaoHinh = hinh.NgayGiaoHinh;
-                ThongTinHinhDaChon.SoDienThoaiKH = hinh.SoDienThoaiKH;
-                ThongTinHinhDaChon.MaLoai = hinh.MaLoai;
-                ThongTinHinhDaChon.DaXong = hinh.DaXong;
-                ThongTinHinhDaChon.GiaHinh = hinh.GiaHinh;
-                ThongTinHinhDaChon.GiaKhachCoc = hinh.GiaKhachCoc;
-                ThongTinHinhDaChon.GhiChu = hinh.GhiChu;
-                #endregion
-                
-                capNhatWindow.maHinhTextBlock.Text = hinh.MaHinh.ToString();
-                capNhatWindow.tenHinhTextbox.Text = hinh.TenHinh;
-                capNhatWindow.kichCoTextbox.Text = hinh.KichCo;
-                capNhatWindow.giaHinhTextbox.Text = hinh.GiaHinh.ToString();
-                capNhatWindow.tienKhachCocTextbox.Text = hinh.GiaKhachCoc.ToString();
-                capNhatWindow.ngayGiaoTextbox.Text = hinh.NgayGiaoHinh;
-                capNhatWindow.SdtTexbox.Text = hinh.SoDienThoaiKH;
-                capNhatWindow.ghiChuTextbox.Text = hinh.GhiChu;
-                capNhatWindow.ShowDialog();
+                if (hinh != null)
+                {
+                    CapNhatThongTinViewModel.hinhAnh = new HinhAnh();
+                    CapNhatThongTinViewModel.hinhAnh = hinh;
+                    CapNhatThongTin capNhatWindow = new CapNhatThongTin();
+                    #region thongTinHinhDaChon
+                    ThongTinHinhDaChon.MaHinh = hinh.MaHinh;
+                    ThongTinHinhDaChon.TenHinh = hinh.TenHinh;
+                    ThongTinHinhDaChon.KichCo = hinh.KichCo;
+                    ThongTinHinhDaChon.NgayGiaoHinh = hinh.NgayGiaoHinh;
+                    ThongTinHinhDaChon.SoDienThoaiKH = hinh.SoDienThoaiKH;
+                    ThongTinHinhDaChon.MaLoai = hinh.MaLoai;
+                    ThongTinHinhDaChon.DaXong = hinh.DaXong;
+                    ThongTinHinhDaChon.GiaHinh = hinh.GiaHinh;
+                    ThongTinHinhDaChon.GiaKhachCoc = hinh.GiaKhachCoc;
+                    ThongTinHinhDaChon.GhiChu = hinh.GhiChu;
+                    #endregion
 
+                    capNhatWindow.maHinhTextBlock.Text = hinh.MaHinh.ToString();
+                    capNhatWindow.tenHinhTextbox.Text = hinh.TenHinh;
+                    capNhatWindow.kichCoTextbox.Text = hinh.KichCo;
+                    capNhatWindow.giaHinhTextbox.Text = hinh.GiaHinh.ToString();
+                    capNhatWindow.tienKhachCocTextbox.Text = hinh.GiaKhachCoc.ToString();
+                    capNhatWindow.ngayGiaoTextbox.Text = hinh.NgayGiaoHinh;
+                    capNhatWindow.SdtTexbox.Text = hinh.SoDienThoaiKH;
+                    capNhatWindow.ghiChuTextbox.Text = hinh.GhiChu;
+                    capNhatWindow.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn hình cần cập nhật thông tin !");
+                }
 
             });
             loadCommand = new RelayCommand<ListView>((o) => { return true; },(o) => 
