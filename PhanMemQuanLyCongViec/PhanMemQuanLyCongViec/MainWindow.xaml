@@ -45,8 +45,12 @@
 
                 <RadioButton x:Name="recyleBinRadioBtn" Height="100" Width="100" Style="{StaticResource MenuButtonTheme}" Content="THÙNG RÁC" Command="{Binding ThungRacCommand}">
                 </RadioButton>
-
-
+                <TextBlock Text="A PRODUCT FROM :" FontSize="7" Foreground="White"  TextWrapping="Wrap" Margin="20,100,0,0"/>
+               
+                <Image Width="30" Margin="0,8,0,2" Source="/ImagesSource/tapCom.jpg"/>
+                <TextBlock Text="tapCom-Tech" FontSize="11" Foreground="White"  TextWrapping="Wrap" Margin="19,0,0,2"/>
+                <TextBlock Text="Software corporation." FontSize="5" Foreground="White"  Margin="27,0,0,0"/>
+            
             </StackPanel>
 
             <ContentControl Grid.Column="1" x:Name="SceneContentControl"
