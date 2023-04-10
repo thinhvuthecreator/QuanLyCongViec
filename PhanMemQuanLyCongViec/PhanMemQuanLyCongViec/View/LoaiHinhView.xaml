@@ -29,7 +29,7 @@
         </Grid.Resources>
         <ScrollViewer>
             <WrapPanel x:Name="LoaiHinhScene" ScrollViewer.VerticalScrollBarVisibility="Visible">
-                <Button x:Name="addTypeButton" Style="{StaticResource addButtonStyle}" Background="#FF3E4E5F" ToolTip="Thêm loại hình" Command="{Binding  themLoaiHinhCommand}">
+                <Button x:Name="addTypeButton" Style="{StaticResource addButtonStyle}" Background="#FF3E4E5F" ToolTip="Thêm loại hình" Command="{Binding  themLoaiHinhCommand}" CommandParameter="{Binding ElementName=LoaiHinhScene}">
                     <materialDesign:PackIcon Kind="NotePlus" Width="90" Height="90"/>
                 </Button>
             </WrapPanel>

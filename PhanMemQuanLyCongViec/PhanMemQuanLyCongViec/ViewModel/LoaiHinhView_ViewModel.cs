@@ -15,18 +15,23 @@ namespace PhanMemQuanLyCongViec.ViewModel
 {
     public class LoaiHinhView_ViewModel : BaseViewModel
     {
+        WrapPanel loaiHinhScene = new WrapPanel();
+
         #region commands
-        public RelayCommand<object> themLoaiHinhCommand { get; set; }
+        public RelayCommand<WrapPanel> themLoaiHinhCommand { get; set; }
         public RelayCommand<WrapPanel> viewLoadCommand { get; set; }
         #endregion
         public LoaiHinhView_ViewModel()
         {
            
-            themLoaiHinhCommand = new RelayCommand<object>((p) => { return true; }, (p) =>
+            themLoaiHinhCommand = new RelayCommand<WrapPanel>((p) => { return true; }, (p) =>
             {
                 ThemLoaiHinhView windowThem = new ThemLoaiHinhView();
                 windowThem.ShowDialog();
+                loadDuLieuCacLoaiHinh(p);   
+
             });
+
             viewLoadCommand = new RelayCommand<WrapPanel>((p) => { return true; }, (p) =>   //p là WrapPanel
             {
                 loadDuLieuCacLoaiHinh(p); 
@@ -37,7 +42,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
         #region methods
         void loadDuLieuCacLoaiHinh(WrapPanel p)
         {
-          
+            p.Children.RemoveRange(1, p.Children.Count);
             DataTable dataLoaiHinh = LoaiHinhAnh_SQL.loadDulieu(); // trả về tất cả các loại hình
             foreach(DataRow row in dataLoaiHinh.Rows)
             {
@@ -79,8 +84,13 @@ namespace PhanMemQuanLyCongViec.ViewModel
            
 
         }
+        FrameworkElement getWrapPanel(Button btn)
+        {
+            FrameworkElement wrapPanel = btn;
+            wrapPanel = btn.Parent as FrameworkElement;
+            return wrapPanel;
 
-
+        }
         #endregion
 
         #region events
@@ -88,6 +98,8 @@ namespace PhanMemQuanLyCongViec.ViewModel
         {
             Button button = sender as Button;
             ButtonDaNhan.tenLoai = button.Content.ToString();
+            loaiHinhScene =  getWrapPanel(button) as WrapPanel;
+         
         }
         private void Item_Click(object sender, RoutedEventArgs e)
         {
@@ -97,6 +109,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 if (LoaiHinhAnh_SQL.xoaDuLieu(ButtonDaNhan.tenLoai))
                 {
                     MessageBox.Show("Xóa thành công !");
+                    loadDuLieuCacLoaiHinh(loaiHinhScene);
                 }
                 else
                 {
