@@ -24,15 +24,15 @@
                 <ListView ItemsSource="{Binding listHinhAnh}" x:Name="hinhAnhListView">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn DisplayMemberBinding="{Binding TenHinh}" Header="Tên" Width="84"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding KichCo}" Header="Kích cỡ" Width="125"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding NgayGiaoHinh}" Header="Ngày giao" Width="124"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding SoDienThoaiKH}" Header="Số điện thoại" Width="142"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding GiaHinh}" Header="Giá" Width="90"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding GiaKhachCoc}" Header="Khách cọc" Width="124"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding ConLai}" Header="Còn lại" Width="105"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding GhiChu}" Header="Ghi chú" Width="109"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding TenLoai}" Header="Loại hình" Width="111"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding TenHinh}" Header="Tên" Width="140"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding KichCo}" Header="Kích cỡ" Width="130"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding NgayGiaoHinh}" Header="Ngày giao" Width="130"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding SoDienThoaiKH}" Header="Số điện thoại" Width="148"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding GiaHinh}" Header="Giá" Width="160"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding GiaKhachCoc}" Header="Khách cọc" Width="160"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding ConLai}" Header="Còn lại" Width="160"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding GhiChu}" Header="Ghi chú" Width="190"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding TenLoai}" Header="Loại hình" Width="130"/>
                         </GridView>
                     </ListView.View>
                 </ListView>

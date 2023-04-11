@@ -57,14 +57,14 @@
                 <ListView x:Name="hinhAnhListView" ItemsSource="{Binding listHinhAnh}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn DisplayMemberBinding="{Binding TenHinh}" Header="Tên" Width="100"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding KichCo}" Header="Kích cỡ" Width="125"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding NgayGiaoHinh}" Header="Ngày giao" Width="125"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding SoDienThoaiKH}" Header="Số điện thoại" Width="142"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding GiaHinh}" Header="Giá" Width="100"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding GiaKhachCoc}" Header="Khách cọc" Width="150"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding ConLai}" Header="Còn lại" Width="150"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding GhiChu}" Header="Ghi chú" Width="109"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding TenHinh}" Header="Tên" Width="140"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding KichCo}" Header="Kích cỡ" Width="130"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding NgayGiaoHinh}" Header="Ngày giao" Width="130"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding SoDienThoaiKH}" Header="Số điện thoại" Width="148"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding GiaHinh}" Header="Giá" Width="160"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding GiaKhachCoc}" Header="Khách cọc" Width="160"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding ConLai}" Header="Còn lại" Width="160"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding GhiChu}" Header="Ghi chú" Width="190"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
