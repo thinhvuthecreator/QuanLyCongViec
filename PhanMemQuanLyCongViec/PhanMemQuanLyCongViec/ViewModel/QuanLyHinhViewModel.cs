@@ -85,6 +85,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
                 HinhAnh hinh = (HinhAnh)o.SelectedItem;
                 if (hinh != null)
                 {
+                  
                     CapNhatThongTinViewModel.hinhAnh = new HinhAnh();
                     CapNhatThongTinViewModel.hinhAnh = hinh;
                     CapNhatThongTin capNhatWindow = new CapNhatThongTin();
@@ -100,7 +101,6 @@ namespace PhanMemQuanLyCongViec.ViewModel
                     ThongTinHinhDaChon.GiaKhachCoc = hinh.GiaKhachCoc;
                     ThongTinHinhDaChon.GhiChu = hinh.GhiChu;
                     #endregion
-
                     capNhatWindow.maHinhTextBlock.Text = hinh.MaHinh.ToString();
                     capNhatWindow.tenHinhTextbox.Text = hinh.TenHinh;
                     capNhatWindow.kichCoTextbox.Text = hinh.KichCo;
@@ -110,6 +110,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
                     capNhatWindow.SdtTexbox.Text = hinh.SoDienThoaiKH;
                     capNhatWindow.ghiChuTextbox.Text = hinh.GhiChu;
                     capNhatWindow.ShowDialog();
+ 
                 }
                 else
                 {
