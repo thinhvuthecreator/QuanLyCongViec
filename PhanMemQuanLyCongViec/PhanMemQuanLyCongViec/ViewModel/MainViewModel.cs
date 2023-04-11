@@ -39,7 +39,6 @@ namespace PhanMemQuanLyCongViec.ViewModel
 
         public MainViewModel()
         {
-
             LoaiHinhVM = new LoaiHinhView_ViewModel();
             ChuaXongVM = new ChuaXongViewModel();
             DaXongVM = new DaXongViewModel();
