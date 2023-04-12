@@ -114,9 +114,6 @@
     <Compile Include="View\QuanLyHinhView.xaml.cs">
       <DependentUpon>QuanLyHinhView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SplashScreenView.xaml.cs">
-      <DependentUpon>SplashScreenView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\ThemHinhView.xaml.cs">
       <DependentUpon>ThemHinhView.xaml</DependentUpon>
     </Compile>
@@ -175,10 +172,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\QuanLyHinhView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SplashScreenView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
