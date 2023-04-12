@@ -76,6 +76,8 @@ namespace PhanMemQuanLyCongViec {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         public static void Main() {
+            SplashScreen splashScreen = new SplashScreen("imagessource/1.png");
+            splashScreen.Show(true);
             PhanMemQuanLyCongViec.App app = new PhanMemQuanLyCongViec.App();
             app.InitializeComponent();
             app.Run();
