@@ -103,10 +103,8 @@ namespace PhanMemQuanLyCongViec.ViewModel
                     capNhatWindow.maHinhTextBlock.Text = hinh.MaHinh.ToString();
                     capNhatWindow.tenHinhTextbox.Text = hinh.TenHinh;
                     capNhatWindow.kichCoTextbox.Text = hinh.KichCo;
-                    string giaHinh = string.Format("{0:C}", hinh.GiaHinh.ToString());
-                    string giaKhachCoc = string.Format("{0:C}", hinh.GiaKhachCoc.ToString());
-                    capNhatWindow.giaHinhTextbox.Text = giaHinh;
-                    capNhatWindow.tienKhachCocTextbox.Text = giaKhachCoc;
+                    capNhatWindow.giaHinhTextbox.Text = hinh.GiaHinh.ToString();
+                    capNhatWindow.tienKhachCocTextbox.Text = hinh.GiaKhachCoc.ToString();
                     capNhatWindow.ngayGiaoTextbox.Text = hinh.NgayGiaoHinh;
                     capNhatWindow.SdtTexbox.Text = hinh.SoDienThoaiKH;
                     capNhatWindow.ghiChuTextbox.Text = hinh.GhiChu;
