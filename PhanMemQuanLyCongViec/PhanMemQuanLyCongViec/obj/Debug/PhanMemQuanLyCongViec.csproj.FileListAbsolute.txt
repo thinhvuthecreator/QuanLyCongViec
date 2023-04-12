@@ -80,5 +80,3 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongV
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\View\ThungRacView.baml
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\View\CapNhatThongTin.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\View\CapNhatThongTin.baml
-C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\View\SplashScreenView.g.cs
-C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\View\SplashScreenView.baml
