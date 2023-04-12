@@ -60,7 +60,7 @@ namespace PhanMemQuanLyCongViec.ViewModel
             ThungRacCommand = new RelayCommand<object>(o => { return true; }, o =>
             { CurrentView = ThungRacVM; });
             #endregion
-
+            //
         }
     }
 }
