@@ -129,19 +129,22 @@ namespace PhanMemQuanLyCongViec.ViewModel
             DataTable dataHinhAnh = SQL_Connection.Instance.ExecuteSQL("SELECT * FROM HINHANH WHERE MALOAI = " + LoaiHinhDaChon.MaLoai);
             foreach(DataRow row in dataHinhAnh.Rows)
             {
-                HinhAnh hinh = new HinhAnh();
-                hinh.MaHinh = int.Parse(row[0].ToString());
-                hinh.TenHinh = row[1].ToString();
-                hinh.KichCo = row[9].ToString();
-                hinh.NgayGiaoHinh = row[2].ToString();
-                hinh.SoDienThoaiKH = row[3].ToString();
-                hinh.GiaHinh = decimal.Parse(row[4].ToString());
-                hinh.GiaKhachCoc = decimal.Parse(row[5].ToString());
-                hinh.ConLai = hinh.GiaHinh - hinh.GiaKhachCoc;
-                hinh.GhiChu = row[6].ToString();
-                hinh.MaLoai = int.Parse(row[8].ToString());
-                hinh.DaXong = int.Parse(row[7].ToString());
-                listHinhAnh.Add(hinh);
+                if (row != null)
+                {
+                    HinhAnh hinh = new HinhAnh();
+                    hinh.MaHinh = int.Parse(row[0].ToString());
+                    hinh.TenHinh = row[1].ToString();
+                    hinh.KichCo = row[9].ToString();
+                    hinh.NgayGiaoHinh = row[2].ToString();
+                    hinh.SoDienThoaiKH = row[3].ToString();
+                    hinh.GiaHinh = decimal.Parse(row[4].ToString());
+                    hinh.GiaKhachCoc = decimal.Parse(row[5].ToString());
+                    hinh.ConLai = hinh.GiaHinh - hinh.GiaKhachCoc;
+                    hinh.GhiChu = row[6].ToString();
+                    hinh.MaLoai = int.Parse(row[8].ToString());
+                    hinh.DaXong =  row[7].ToString() == "false" ? 0 : 1;
+                    listHinhAnh.Add(hinh);
+                }
 
             }
 
@@ -154,19 +157,22 @@ namespace PhanMemQuanLyCongViec.ViewModel
             DataTable dataHinhAnh = SQL_Connection.Instance.ExecuteSQL("SELECT * FROM HINHANH WHERE MALOAI = " + LoaiHinhDaChon.MaLoai);
             foreach (DataRow row in dataHinhAnh.Rows)
             {
-                HinhAnh hinh = new HinhAnh();
-                hinh.MaHinh = int.Parse(row[0].ToString());
-                hinh.TenHinh = row[1].ToString();
-                hinh.KichCo = row[9].ToString();
-                hinh.NgayGiaoHinh = row[2].ToString();
-                hinh.SoDienThoaiKH = row[3].ToString();
-                hinh.GiaHinh = decimal.Parse(row[4].ToString());
-                hinh.GiaKhachCoc = decimal.Parse(row[5].ToString());
-                hinh.ConLai = hinh.GiaHinh - hinh.GiaKhachCoc;
-                hinh.GhiChu = row[6].ToString();
-                hinh.MaLoai = int.Parse(row[8].ToString());
-                hinh.DaXong = int.Parse(row[7].ToString());
-                listHinhAnh.Add(hinh);
+                if (row != null)
+                {
+                    HinhAnh hinh = new HinhAnh();
+                    hinh.MaHinh = int.Parse(row[0].ToString());
+                    hinh.TenHinh = row[1].ToString();
+                    hinh.KichCo = row[9].ToString();
+                    hinh.NgayGiaoHinh = row[2].ToString();
+                    hinh.SoDienThoaiKH = row[3].ToString();
+                    hinh.GiaHinh = decimal.Parse(row[4].ToString());
+                    hinh.GiaKhachCoc = decimal.Parse(row[5].ToString());
+                    hinh.ConLai = hinh.GiaHinh - hinh.GiaKhachCoc;
+                    hinh.GhiChu = row[6].ToString();
+                    hinh.MaLoai = int.Parse(row[8].ToString());
+                    hinh.DaXong = row[7].ToString() == "false" ? 0 : 1;
+                    listHinhAnh.Add(hinh);
+                }
 
             }
 

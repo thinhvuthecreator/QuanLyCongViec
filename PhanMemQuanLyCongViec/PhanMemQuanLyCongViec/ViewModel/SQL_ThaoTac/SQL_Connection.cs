@@ -10,7 +10,7 @@ namespace PhanMemQuanLyCongViec.ViewModel.SQL_ThaoTac
 {
     public class SQL_Connection
     {
-        private string stringConnection = @"Data Source=DESKTOP-VAV9QIG\SQLEXPRESS;Initial Catalog=QUANLYCONGVIEC;Integrated Security=True";
+        private string stringConnection = @"Data Source=.\SQLEXPRESS;Initial Catalog=QUANLYCONGVIEC;Integrated Security=True";
         private static SQL_Connection instance;
         public static SQL_Connection Instance
         {

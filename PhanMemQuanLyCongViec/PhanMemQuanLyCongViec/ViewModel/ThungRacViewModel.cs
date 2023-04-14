@@ -91,20 +91,23 @@ namespace PhanMemQuanLyCongViec.ViewModel
             DataTable dataHinhAnh = SQL_Connection.Instance.ExecuteSQL("SELECT * FROM HINHANHBIXOA H,LOAIHINHANH LH WHERE H.MALOAI = LH.MALOAI");
             foreach (DataRow row in dataHinhAnh.Rows)
             {
-                HinhAnh hinh = new HinhAnh();
-                hinh.MaHinh = int.Parse(row[0].ToString());
-                hinh.KichCo = row[9].ToString();
-                hinh.MaLoai = int.Parse(row[8].ToString());
-                hinh.TenHinh = row[1].ToString();
-                hinh.SoDienThoaiKH = row[3].ToString();
-                hinh.GiaHinh = decimal.Parse(row[4].ToString());
-                hinh.GiaKhachCoc = decimal.Parse(row[5].ToString());
-                hinh.ConLai = hinh.GiaHinh - hinh.GiaKhachCoc;
-                hinh.GhiChu = row[6].ToString();
-                hinh.TenLoai = row[11].ToString();
-                hinh.DaXong = int.Parse(row[7].ToString()); // lỗi ở đây   0.ToString() không trả về "0" mà trả về vớ vẩn
-                hinh.DaXongString = hinh.DaXong == 1 ? "Đã xong" : "Chưa xong";
-                listHinhAnh.Add(hinh);
+                if (row != null)
+                {
+                    HinhAnh hinh = new HinhAnh();
+                    hinh.MaHinh = int.Parse(row[0].ToString());
+                    hinh.KichCo = row[9].ToString();
+                    hinh.MaLoai = int.Parse(row[8].ToString());
+                    hinh.TenHinh = row[1].ToString();
+                    hinh.SoDienThoaiKH = row[3].ToString();
+                    hinh.GiaHinh = decimal.Parse(row[4].ToString());
+                    hinh.GiaKhachCoc = decimal.Parse(row[5].ToString());
+                    hinh.ConLai = hinh.GiaHinh - hinh.GiaKhachCoc;
+                    hinh.GhiChu = row[6].ToString();
+                    hinh.TenLoai = row[11].ToString();
+                    hinh.DaXong = row[7].ToString() == "false" ? 0 : 1; // lỗi ở đây   0.ToString() không trả về "0" mà trả về vớ vẩn
+                    hinh.DaXongString = hinh.DaXong == 1 ? "Đã xong" : "Chưa xong";
+                    listHinhAnh.Add(hinh);
+                }
 
             }
             listView.ItemsSource = listHinhAnh;
@@ -116,20 +119,23 @@ namespace PhanMemQuanLyCongViec.ViewModel
             DataTable dataHinhAnh = SQL_Connection.Instance.ExecuteSQL("SELECT * FROM HINHANHBIXOA H,LOAIHINHANH LH WHERE H.MALOAI = LH.MALOAI");
             foreach (DataRow row in dataHinhAnh.Rows)
             {
-                HinhAnh hinh = new HinhAnh();
-                hinh.MaHinh = int.Parse(row[0].ToString());
-                hinh.KichCo = row[9].ToString();
-                hinh.MaLoai = int.Parse(row[8].ToString());
-                hinh.TenHinh = row[1].ToString();
-                hinh.SoDienThoaiKH = row[3].ToString();
-                hinh.GiaHinh = decimal.Parse(row[4].ToString());
-                hinh.GiaKhachCoc = decimal.Parse(row[5].ToString());
-                hinh.ConLai = hinh.GiaHinh - hinh.GiaKhachCoc;
-                hinh.GhiChu = row[6].ToString();
-                hinh.TenLoai = row[11].ToString();
-                hinh.DaXong = int.Parse(row[7].ToString()); // lỗi ở đây   0.ToString() không trả về "0" mà trả về vớ vẩn
-                hinh.DaXongString = hinh.DaXong == 1 ? "Đã xong" : "Chưa xong";
-                listHinhAnh.Add(hinh);
+                if (row != null)
+                {
+                    HinhAnh hinh = new HinhAnh();
+                    hinh.MaHinh = int.Parse(row[0].ToString());
+                    hinh.KichCo = row[9].ToString();
+                    hinh.MaLoai = int.Parse(row[8].ToString());
+                    hinh.TenHinh = row[1].ToString();
+                    hinh.SoDienThoaiKH = row[3].ToString();
+                    hinh.GiaHinh = decimal.Parse(row[4].ToString());
+                    hinh.GiaKhachCoc = decimal.Parse(row[5].ToString());
+                    hinh.ConLai = hinh.GiaHinh - hinh.GiaKhachCoc;
+                    hinh.GhiChu = row[6].ToString();
+                    hinh.TenLoai = row[11].ToString();
+                    hinh.DaXong = row[7].ToString() == "false" ? 0 : 1;// lỗi ở đây   0.ToString() không trả về "0" mà trả về vớ vẩn
+                    hinh.DaXongString = hinh.DaXong == 1 ? "Đã xong" : "Chưa xong";
+                    listHinhAnh.Add(hinh);
+                }
 
             }
         }
