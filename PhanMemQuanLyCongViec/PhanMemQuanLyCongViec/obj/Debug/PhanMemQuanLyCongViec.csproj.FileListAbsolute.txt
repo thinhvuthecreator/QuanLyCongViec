@@ -38,7 +38,6 @@ C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongV
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\bin\Debug\Microsoft.Xaml.Behaviors.xml
-C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\PhanMemQuanLyCongViec.csproj.AssemblyReference.cache
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\LoginWindow.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\MainWindow.g.cs
 C:\Users\admin\OneDrive\Desktop\QuanLyCongViecTuanThinhStudio\PhanMemQuanLyCongViec\PhanMemQuanLyCongViec\obj\Debug\App.g.cs
