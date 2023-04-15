@@ -1,4 +1,0 @@
-Hướng dẫn cài đặt phần mềm Quản Lý Hình Ảnh
-
-B1 : Click đôi vào tập tin SetupData.bat 
-B2 : Vào Debug -> Click đôi vào QuanLyCongViecSetup.exe
